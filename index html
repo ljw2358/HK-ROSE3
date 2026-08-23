@@ -3,342 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK-FUVI & HK WorldBank | Sovereign Customer Success Platform</title>
+    <title>HK-SPACE | Global Aerospace & Future Vision</title>
     <style>
-        :root {
-            --main-gold: #D4AF37;
-            --success-green: #2ecc71;
-            --bg-dark: #030712;
-            --card-bg: rgba(15, 23, 42, 0.85);
-            --border-color: rgba(212, 175, 55, 0.3);
-            --text-main: #f3f4f6;
-            --text-sub: #94a3b8;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: 'Noto Sans KR', 'Segoe UI', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
-            position: relative;
+            background-color: #05050a;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
         }
-
-        body::before {
-            content: '';
-            position: absolute;
-            width: 200vw;
-            height: 200vh;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.05) 0%, rgba(3, 7, 18, 1) 70%);
-            z-index: -1;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-        }
-
         header {
-            text-align: center;
-            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(5, 5, 10, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-
-        .badge {
-            display: inline-block;
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--main-gold);
-            border: 1px solid var(--border-color);
-            padding: 6px 16px;
-            border-radius: 20px;
-            margin-bottom: 15px;
-            background: rgba(212, 175, 55, 0.05);
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #ffffff;
-            margin-bottom: 10px;
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
             letter-spacing: 2px;
-            text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+            color: #00ffcc;
         }
-
-        p.subtitle {
-            font-size: 1.1rem;
-            color: var(--text-sub);
-            font-weight: 300;
-            margin-bottom: 25px;
+        .lang-selector select {
+            background: #111b2b;
+            color: #ffffff;
+            border: 1px solid #00ffcc;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
         }
-
-        .lang-box {
+        main {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: radial-gradient(circle at center, #101c3a 0%, #05050a 100%);
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00ffcc, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p {
+            font-size: 18px;
+            color: #a0a0c0;
+            max-width: 600px;
+            line-height: 1.6;
             margin-bottom: 30px;
         }
-
-        select#langSelect {
-            background: rgba(15, 23, 42, 0.9);
-            color: var(--main-gold);
-            border: 1px solid var(--border-color);
-            padding: 10px 20px;
-            border-radius: 10px;
-            font-size: 1rem;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.3s ease;
-        }
-
-        select#langSelect:hover {
-            border-color: var(--main-gold);
-            background: rgba(30, 41, 59, 1);
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 30px 25px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--main-gold);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--main-gold);
-            box-shadow: 0 10px 30px -10px rgba(212, 175, 55, 0.3);
-        }
-
-        .card h3 {
-            color: var(--main-gold);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-
-        .card p {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .status-val {
-            color: var(--success-green);
+        .cta-btn {
+            background: #00ffcc;
+            color: #05050a;
+            padding: 12px 30px;
+            font-size: 16px;
             font-weight: bold;
-        }
-
-        .btn-action {
-            background: var(--main-gold);
-            color: #000;
             border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-weight: bold;
+            border-radius: 5px;
             cursor: pointer;
-            width: 100%;
-            transition: opacity 0.3s ease;
-            margin-top: 10px;
+            transition: 0.3s;
+            text-decoration: none;
         }
-
-        .btn-action:hover {
-            opacity: 0.85;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-sub);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            padding-top: 25px;
-            letter-spacing: 1px;
+        .cta-btn:hover {
+            background: #00b399;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="badge" id="badge-title">HK-FUVI & HK WorldBank Global Ecosystem</div>
-            <h1 id="main-heading">고객 성공 시스템</h1>
-            <p class="subtitle" id="sub-heading">KYC의 제약 없이, 전 세계 고객의 자산 증식과 경제적 성공을 보장하는 탈중앙화 금융 허브</p>
-            
-            <div class="lang-box">
-                <select id="langSelect" onchange="changeLanguage(this.value)">
-                    <option value="ko">🇰🇷 한국어 (Korean)</option>
-                    <option value="en">🇺🇸 English (US)</option>
-                    <option value="zh">🇨🇳 中文 (Chinese)</option>
-                    <option value="ja">🇯🇵 日本語 (Japanese)</option>
-                    <option value="es">🇪🇸 Español (Spanish)</option>
-                    <option value="fr">🇫🇷 Français (French)</option>
-                    <option value="de">🇩🇪 Deutsch (German)</option>
-                    <option value="ru">🇷🇺 Русский (Russian)</option>
-                </select>
-            </div>
-        </header>
 
-        <div class="dashboard-grid">
-            <!-- 1. 자주적 입출입 및 자산 관리 -->
-            <div class="card">
-                <h3 id="c1-title">01. KYC-Free Sovereign Vault</h3>
-                <p id="c1-desc">중앙화된 검증 절차 없이 사용자의 기기 기반 로컬 인증을 통해 자산과 데이터를 즉시 입출입하는 자주적 금융 제어 시스템.</p>
-                <p>Status: <span class="status-val" id="c1-status">SECURE / NO-KYC ACTIVE</span></p>
-                <button class="btn-action" onclick="alert('Connecting to Sovereign Vault...')">VAULT ACCESS</button>
-            </div>
-
-            <!-- 2. 고객 성공 및 UBI 선순환 -->
-            <div class="card">
-                <h3 id="c2-title">02. Customer Success & UBI</h3>
-                <p id="c2-desc">플랫폼 순수익의 30%를 전 세계 빈곤 지역 및 고객 생태계로 환원하여, 상생과 경제적 성공을 동시 달성하는 기본소득 모델.</p>
-                <p>Profit Share: <span class="status-val">30% UBI Applied</span></p>
-                <button class="btn-action" onclick="alert('Activating Customer Success Program...')">JOIN SUCCESS PROGRAM</button>
-            </div>
-
-            <!-- 3. Pi Network 및 자동 스테이킹 -->
-            <div class="card">
-                <h3 id="c3-title">03. Pi Network Yield Engine</h3>
-                <p id="c3-desc">Pi 네트워크와 결합된 알고리즘을 통해 예치 자산에 대한 안정적인 31.41% APY 수익률을 실시간으로 고객에게 제공.</p>
-                <p>Yield Rate: <span class="status-val">31.41% APY</span></p>
-                <button class="btn-action" onclick="alert('Staking protocol initiated.')">ENABLE STAKING</button>
-            </div>
+    <header>
+        <div class="logo">HK-SPACE</div>
+        <div class="lang-selector">
+            <select id="languageSelect" onchange="changeLanguage(this.value)">
+                <option value="ko">한국어 (Korean)</option>
+                <option value="en">English (영어)</option>
+                <option value="zh">中文 (중국어)</option>
+                <option value="ar">العربية (아랍어)</option>
+                <option value="hi">हिन्दी (인도어/힌디어)</option>
+                <option value="es">Español (스페인어)</option>
+                <option value="pt">Português (브라질어)</option>
+                <option value="uk">Українська (우크라이나어)</option>
+                <option value="ja">日本語 (일본어)</option>
+                <option value="ru">Русский (러시아어)</option>
+                <option value="vi">Tiếng Việt (베트남어)</option>
+                <option value="th">ไทย (태국어)</option>
+                <option value="id">Bahasa Indonesia (인도네시아어)</option>
+                <option value="ps">فلسطين / پښتو (팔레스타인어)</option>
+                <option value="de">Deutsch (독일어)</option>
+                <option value="it">Italiano (이태리어)</option>
+                <option value="fr">Français (프랑스어)</option>
+                <option value="en-ng">Nigeria English (나이지리아)</option>
+                <option value="fr-cm">Cameroun Français (카메룬)</option>
+                <option value="en-za">South Africa (남아공)</option>
+                <option value="am">አማርኛ (이디오피아)</option>
+            </select>
         </div>
+    </header>
 
-        <footer>
-            &copy; 2026 HK GROUP. CHAIRMAN HYEKONG. ALL RIGHTS RESERVED.
-        </footer>
-    </div>
+    <main>
+        <h1 id="titleText">ROSPACE & HK-SPACE</h1>
+        <p id="descText">대한민국을 넘어 우주와 미래를 향해 도약하는 HK 그룹의 항공우주 비전. 지구촌과 인류의 경계를 넘어 새로운 개척지를 열어갑니다.</p>
+        <a href="https://hkwb.world" class="cta-btn" id="btnText">HK WorldBank로 이동</a>
+    </main>
 
     <script>
         const translations = {
             ko: {
-                badge: "HK-FUVI & HK WorldBank Global Ecosystem",
-                main: "고객 성공 시스템",
-                sub: "KYC의 제약 없이, 전 세계 고객의 자산 증식과 경제적 성공을 보장하는 탈중앙화 금융 허브",
-                c1t: "01. KYC-Free Sovereign Vault",
-                c1d: "중앙화된 검증 절차 없이 사용자의 기기 기반 로컬 인증을 통해 자산과 데이터를 즉시 입출입하는 자주적 금융 제어 시스템.",
-                c2t: "02. Customer Success & UBI",
-                c2d: "플랫폼 순수익의 30%를 전 세계 빈곤 지역 및 고객 생태계로 환원하여, 상생과 경제적 성공을 동시 달성하는 기본소득 모델.",
-                c3t: "03. Pi Network Yield Engine",
-                c3d: "Pi 네트워크와 결합된 알고리즘을 통해 예치 자산에 대한 안정적인 31.41% APY 수익률을 실시간으로 고객에게 제공."
+                title: "ROSPACE & HK-SPACE",
+                desc: "대한민국을 넘어 우주와 미래를 향해 도약하는 HK 그룹의 항공우주 비전. 지구촌과 인류의 경계를 넘어 새로운 개척지를 열어갑니다.",
+                btn: "HK WorldBank로 이동"
             },
             en: {
-                badge: "HK-FUVI & HK WorldBank Global Ecosystem",
-                main: "Customer Success System",
-                sub: "A decentralized financial hub ensuring asset growth and success worldwide, free from KYC restrictions.",
-                c1t: "01. KYC-Free Sovereign Vault",
-                c1d: "Sovereign financial control system allowing instant asset and data deposits/withdrawals via local device auth without central verification.",
-                c2t: "02. Customer Success & UBI",
-                c2d: "Universal Basic Income model returning 30% of net profits to global ecosystems to achieve mutual growth and success.",
-                c3t: "03. Pi Network Yield Engine",
-                c3d: "Real-time delivery of a stable 31.41% APY yield on deposited assets through algorithms integrated with the Pi Network."
+                title: "ROSPACE & HK-SPACE",
+                desc: "HK Group's aerospace vision leaping beyond South Korea into space and the future. Opening new frontiers beyond global and human boundaries.",
+                btn: "Go to HK WorldBank"
             },
             zh: {
-                badge: "HK-FUVI & HK WorldBank 全球生态系统",
-                main: "客户成功系统",
-                sub: "不受KYC限制，保障全球客户资产增值与经济成功的去中心化金融枢纽。",
-                c1t: "01. 免KYC主权金库",
-                c1d: "无需中央验证，通过本地设备认证即时存取资产的主权金融控制系统。",
-                c2t: "02. 客户成功与UBI",
-                c2d: "将平台净利润的30%回馈给全球生态系统的全民基本收入模式。",
-                c3t: "03. Pi网络收益引擎",
-                c3d: "通过与Pi网络结合的算法，向客户实时提供稳定的31.41% APY收益率。"
+                title: "ROSPACE & HK-SPACE",
+                desc: "HK集团超越韩国、飞向太空与未来的航空航天愿景。跨越全球与人类的界限，开辟全新开拓地。",
+                btn: "前往 HK WorldBank"
             },
-            ja: {
-                badge: "HK-FUVI & HK WorldBank グローバルエコシステム",
-                main: "顧客成功システム",
-                sub: "KYCの制限なく、世界中の顧客の資産増加と経済的成功を保証する分散型金融ハブ。",
-                c1t: "01. KYCフリー・ソブリン・バルト",
-                c1d: "中央集権的な検証なしで、デバイス認証を通じて資産とデータを即座に出し入れする主権型金融制御システム。",
-                c2t: "02. 顧客成功 & UBI",
-                c2d: "プラットフォーム純利益の30%を還元し、共生と経済的成功を同時に達成するベーシックインカムモデル。",
-                c3t: "03. Piネットワーク・イールド・エンジン",
-                c3d: "Piネットワークと結合したアルゴリズムにより、預託資産に対して31.41%のAPYリターンをリアルタイム提供。"
+            ar: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "رؤية مجموعة HK الفضائية التي تتجاوز كوريا الجنوبية نحو الفضاء والمستقبل. نفتح آفاقاً جديدة تتجاوز الحدود العالمية والبشرية.",
+                btn: "الذهاب إلى HK WorldBank"
+            },
+            hi: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "दक्षिण कोरिया से आगे अंतरिक्ष और भविष्य की ओर छलांग लगाने वाला HK ग्रुप का एयरोस्पेस विजन। वैश्विक और मानवीय सीमाओं से परे नए क्षितिज खोलना।",
+                btn: "HK WorldBank पर जाएं"
             },
             es: {
-                badge: "Ecosistema Global HK-FUVI y HK WorldBank",
-                main: "Sistema de Éxito del Cliente",
-                sub: "Centro financiero descentralizado que garantiza el crecimiento de activos sin restricciones KYC.",
-                c1t: "01. Bóveda Soberana Sin KYC",
-                c1d: "Sistema de control financiero que permite depósitos y retiros instantáneos mediante autenticación local.",
-                c2t: "02. Éxito del Cliente y UBI",
-                c2d: "Modelo de Renta Básica Universal que destina el 30% de las ganancias netas al ecosistema global.",
-                c3t: "03. Motor de Rendimiento Pi Network",
-                c3d: "Entrega en tiempo real de un rendimiento estable del 31.41% APY integrado con Pi Network."
+                title: "ROSPACE & HK-SPACE",
+                desc: "La visión aeroespacial de HK Group que trasciende Corea del Sur hacia el espacio y el futuro. Abriendo nuevas fronteras más allá de los límites globales y humanos.",
+                btn: "Ir a HK WorldBank"
             },
-            fr: {
-                badge: "Écosystème Global HK-FUVI & HK WorldBank",
-                main: "Système de Succès Client",
-                sub: "Hub financier décentralisé garantissant la croissance des actifs sans restrictions KYC.",
-                c1t: "01. Coffre Souverain Sans KYC",
-                c1d: "Système de contrôle financier permettant des dépôts et retraits instantanés par authentification locale.",
-                c2t: "02. Succès Client & UBI",
-                c2d: "Modèle de revenu universel rétrocédant 30 % des bénéfices nets à l'écosystème mondial.",
-                c3t: "03. Moteur de Rendement Pi Network",
-                c3d: "Fourniture en temps réel d'un rendement stable de 31,41 % APY intégré à Pi Network."
+            pt: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "A visão aeroespacial do HK Group que vai além da Coreia do Sul em direção ao espaço e ao futuro. Abrindo novas fronteiras além dos limites globais e humanos.",
+                btn: "Ir para HK WorldBank"
             },
-            de: {
-                badge: "HK-FUVI & HK WorldBank Globales Ökosystem",
-                main: "Kunden-Erfolgs-System",
-                sub: "Ein dezentrales Finanzzentrum, das weltweites Vermögenswachstum ohne KYC-Beschränkungen garantiert.",
-                c1t: "01. KYC-freie Souveräne Vault",
-                c1d: "Finanzkontrollsystem für sofortige Ein- und Auszahlungen durch lokale Geräteauthentifizierung.",
-                c2t: "02. Kundenerfolg & UBI",
-                c2d: "Grundeinkommensmodell, das 30 % des Nettogewinns an das globale Ökosystem zurückgibt.",
-                c3t: "03. Pi Network Yield Engine",
-                c3d: "Echtzeit-Bereitstellung einer stabilen 31,41% APY Rendite durch Integration in das Pi Network."
+            uk: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "Аерокосмічне бачення HK Group, що виходить за межі Південної Кореї в космос та майбутнє. Відкриваємо нові горизонти за межами глобальних і людських кордонів.",
+                btn: "Перейти до HK WorldBank"
+            },
+            ja: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "韓国を超えて宇宙と未来へと飛躍するHKグループの航空宇宙ビジョン。地球村と人類の境界を超えて新たな開拓地を切り開きます。",
+                btn: "HK WorldBankへ移動"
             },
             ru: {
-                badge: "Глобальная экосистема HK-FUVI и HK WorldBank",
-                main: "Система успеха клиентов",
-                sub: "Децентрализованный финансовый хаб, обеспечивающий рост активов без ограничений KYC.",
-                c1t: "01. Суверенное хранилище без KYC",
-                c1d: "Система финансового контроля для мгновенного ввода и вывода средств через локальную аутентификацию.",
-                c2t: "02. Успех клиентов и UBI",
-                c2d: "Модель базового дохода, возвращающая 30% чистой прибыли глобальной экосистеме.",
-                c3t: "03. Двигатель доходности Pi Network",
-                c3d: "Предоставление стабильной доходности 31.41% APY в реальном времени через Pi Network."
+                title: "ROSPACE & HK-SPACE",
+                desc: "Аэрокосмическое видение HK Group, выходящее за пределы Южной Кореи в космос и будущее. Открывая новые горизонты за пределами глобальных и человеческих границ.",
+                btn: "Перейти в HK WorldBank"
+            },
+            vi: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "Tầm nhìn hàng không vũ trụ của Tập đoàn HK vượt ra ngoài Hàn Quốc hướng tới không gian và tương lai. Mở ra những chân trời mới vượt qua ranh giới toàn cầu và con người.",
+                btn: "Đến HK WorldBank"
+            },
+            th: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "วิสัยทัศน์ด้านการบินและอวกาศของ HK Group ที่ก้าวข้ามเกาหลีใต้สู่อวกาศและอนาคต เปิดพรมแดนใหม่ที่ก้าวข้ามขอบเขตระดับโลกและมนุษยชาติ",
+                btn: "ไปที่ HK WorldBank"
+            },
+            id: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "Visi dirgantara HK Group melompati Korea Selatan menuju angkasa dan masa depan. Membuka perbatasan baru melampaui batas-batas global dan manusia.",
+                btn: "Buka HK WorldBank"
+            },
+            ps: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "د HK ګروپ فضا لید چې له جنوبي کوریا هاخوا فضا او راتلونکي ته لاره هواروي. د نړیوالو او بشري پولو هاخوا نوي پرانیستې جوړوو.",
+                btn: "HK WorldBank ته لاړ شئ"
+            },
+            de: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "Die Luft- und Raumfahrtvision der HK Group, die über Südkorea hinaus in den Weltraum und die Zukunft blickt. Eröffnung neuer Horizonte jenseits globaler und menschlicher Grenzen.",
+                btn: "Zu HK WorldBank"
+            },
+            it: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "La visione aerospaziale di HK Group che va oltre la Corea del Sud verso lo spazio e il futuro. Apriamo nuove frontiere oltre i confini globali e umani.",
+                btn: "Vai a HK WorldBank"
+            },
+            fr: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "La vision aérospatiale du groupe HK qui dépasse la Corée du Sud vers l'espace et l'avenir. Ouvrir de nouvelles frontières au-delà des limites mondiales et humaines.",
+                btn: "Aller à HK WorldBank"
+            },
+            "en-ng": {
+                title: "ROSPACE & HK-SPACE",
+                desc: "HK Group aerospace vision wey dey leap pass South Korea go space and future. Open new ground pass global and human boundaries.",
+                btn: "Go to HK WorldBank"
+            },
+            "fr-cm": {
+                title: "ROSPACE & HK-SPACE",
+                desc: "La vision aérospatiale du groupe HK qui s'élance au-delà de la Corée du Sud vers l'espace et le futur. Ouvrant de nouveaux horizons au-delà des limites mondiales et humaines.",
+                btn: "Aller à HK WorldBank"
+            },
+            "en-za": {
+                title: "ROSPACE & HK-SPACE",
+                desc: "HK Group aerospace vision leaping past South Korea into space and the future. Opening new frontiers beyond global and human boundaries.",
+                btn: "Go to HK WorldBank"
+            },
+            am: {
+                title: "ROSPACE & HK-SPACE",
+                desc: "ከደቡብ ኮሪያ አልፎ ወደ ጠፈር እና ወደፊት የሚንጠራወጠው የHK ግሩፕ የኤሮስፔስ ራዕይ። ከአለም አቀፍ እና ከሰው ገደቦች በላይ አዳዲስ አድማሶችን እንከፍታለን።",
+                btn: "ወደ HK WorldBank ይሂዱ"
             }
         };
 
         function changeLanguage(lang) {
-            const data = translations[lang] || translations['en'];
-            document.getElementById('badge-title').innerText = data.badge;
-            document.getElementById('main-heading').innerText = data.main;
-            document.getElementById('sub-heading').innerText = data.sub;
-            document.getElementById('c1-title').innerText = data.c1t;
-            document.getElementById('c1-desc').innerText = data.c1d;
-            document.getElementById('c2-title').innerText = data.c2t;
-            document.getElementById('c2-desc').innerText = data.c2d;
-            document.getElementById('c3-title').innerText = data.c3t;
-            document.getElementById('c3-desc').innerText = data.c3d;
+            const data = translations[lang] || translations["ko"];
+            document.getElementById("titleText").innerText = data.title;
+            document.getElementById("descText").innerText = data.desc;
+            document.getElementById("btnText").innerText = data.btn;
         }
-
-        console.log("HK-FUVI Customer Success Platform Initialized for Chairman Hyekong.");
     </script>
 </body>
 </html>
