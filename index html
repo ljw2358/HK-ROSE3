@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK-SPACE | Global Aerospace & Future Vision</title>
+    <title>HK-ROSPACE | Global Aerospace & Future Vision</title>
     <style>
         * {
             margin: 0;
@@ -14,22 +14,29 @@
             background-color: #05050a;
             color: #ffffff;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 40px 20px;
         }
         header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 40px;
-            background: rgba(5, 5, 10, 0.9);
+            background: rgba(5, 5, 10, 0.95);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
             z-index: 1000;
         }
         .logo {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             letter-spacing: 2px;
             color: #00ffcc;
@@ -43,28 +50,18 @@
             font-size: 14px;
             cursor: pointer;
         }
-        main {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            background: radial-gradient(circle at center, #101c3a 0%, #05050a 100%);
-        }
         h1 {
-            font-size: 48px;
+            font-size: 42px;
             margin-bottom: 20px;
             background: linear-gradient(45deg, #00ffcc, #0077ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
         p {
-            font-size: 18px;
-            color: #a0a0c0;
-            max-width: 600px;
-            line-height: 1.6;
+            font-size: 16px;
+            color: #b0b0d0;
+            max-width: 750px;
+            line-height: 1.8;
             margin-bottom: 30px;
         }
         .cta-btn {
@@ -76,19 +73,19 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: 0.3s;
             text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+            transition: 0.3s;
         }
         .cta-btn:hover {
             background: #00b399;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">HK-SPACE</div>
+        <div class="logo">HK-ROSPACE</div>
         <div class="lang-selector">
             <select id="languageSelect" onchange="changeLanguage(this.value)">
                 <option value="ko">한국어 (Korean)</option>
@@ -117,117 +114,117 @@
     </header>
 
     <main>
-        <h1 id="titleText">ROSPACE & HK-SPACE</h1>
-        <p id="descText">대한민국을 넘어 우주와 미래를 향해 도약하는 HK 그룹의 항공우주 비전. 지구촌과 인류의 경계를 넘어 새로운 개척지를 열어갑니다.</p>
-        <a href="https://hkwb.world" class="cta-btn" id="btnText">HK WorldBank로 이동</a>
+        <h1 id="titleText">HK-ROSPACE & 미래 항공우주 비전</h1>
+        <p id="descText">대한민국의 국경을 넘어 지구촌과 우주라는 무한한 영역으로 도약하는 HK 그룹의 핵심 항공우주 플랫폼입니다. 휴머노이드 로봇과 첨단 우주 시스템의 완벽한 융합을 통해 인류의 노동을 해방하고, 지구촌 모든 이들에게 풍요롭고 찬란한 미래의 청사진을 선사합니다.</p>
+        <a href="https://hkwb.world" class="cta-btn" id="btnText">HK WorldBank 생태계로 이동</a>
     </main>
 
     <script>
         const translations = {
             ko: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "대한민국을 넘어 우주와 미래를 향해 도약하는 HK 그룹의 항공우주 비전. 지구촌과 인류의 경계를 넘어 새로운 개척지를 열어갑니다.",
-                btn: "HK WorldBank로 이동"
+                title: "HK-ROSPACE & 미래 항공우주 비전",
+                desc: "대한민국의 국경을 넘어 지구촌과 우주라는 무한한 영역으로 도약하는 HK 그룹의 핵심 항공우주 플랫폼입니다. 휴머노이드 로봇과 첨단 우주 시스템의 완벽한 융합을 통해 인류의 노동을 해방하고, 지구촌 모든 이들에게 풍요롭고 찬란한 미래의 청사진을 선사합니다.",
+                btn: "HK WorldBank 생태계로 이동"
             },
             en: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "HK Group's aerospace vision leaping beyond South Korea into space and the future. Opening new frontiers beyond global and human boundaries.",
-                btn: "Go to HK WorldBank"
+                title: "HK-ROSPACE & Global Aerospace Vision",
+                desc: "The core aerospace platform of HK Group, leaping beyond South Korea into the infinite realms of the global village and outer space. Through the seamless convergence of humanoid robots and advanced space systems, we liberate humanity from burdensome labor and deliver a prosperous, brilliant blueprint of the future to everyone.",
+                btn: "Go to HK WorldBank Ecosystem"
             },
             zh: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "HK集团超越韩国、飞向太空与未来的航空航天愿景。跨越全球与人类的界限，开辟全新开拓地。",
-                btn: "前往 HK WorldBank"
+                title: "HK-ROSPACE 与全球航空航天愿景",
+                desc: "这是HK集团的核心航空航天平台，超越韩国国界，跃升至地球村与太空的无限领域。通过人形机器人与尖端太空系统的完美融合，我们将全人类从劳动中解放出来，为地球上的每一个人呈现一幅繁荣辉煌的未来蓝图。",
+                btn: "前往 HK WorldBank 生态系统"
             },
             ar: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "رؤية مجموعة HK الفضائية التي تتجاوز كوريا الجنوبية نحو الفضاء والمستقبل. نفتح آفاقاً جديدة تتجاوز الحدود العالمية والبشرية.",
-                btn: "الذهاب إلى HK WorldBank"
+                title: "HK-ROSPACE والرؤية الفضائية العالمية",
+                desc: "منصة الطيران والفضاء الأساسية لمجموعة HK، والتي تتجاوز حدود كوريا الجنوبية لتنطلق إلى الآفاق اللانهائية للقرية العالمية والفضاء الخارجي. من خلال التكامل السلس بين الروبوتات البشرية وأنظمة الفضاء المتقدمة، نتحرر البشرية من العمالة الشاقة ونقدم مخططاً مستقبلياً مشرقاً لكل فرد.",
+                btn: "الذهاب إلى نظام HK WorldBank البيئي"
             },
             hi: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "दक्षिण कोरिया से आगे अंतरिक्ष और भविष्य की ओर छलांग लगाने वाला HK ग्रुप का एयरोस्पेस विजन। वैश्विक और मानवीय सीमाओं से परे नए क्षितिज खोलना।",
-                btn: "HK WorldBank पर जाएं"
+                title: "HK-ROSPACE और वैश्विक एयरोस्पेस विजन",
+                desc: "एचके ग्रुप का मुख्य एयरोस्पेस प्लेटफॉर्म, जो दक्षिण कोरिया की सीमाओं से परे वैश्विक गांव और बाहरी अंतरिक्ष के अनंत क्षेत्रों में छलांग लगा रहा है। ह्यूमेनोइड रोबोट और उन्नत अंतरिक्ष प्रणालियों के सहज अभिसरण के माध्यम से, हम मानवता को श्रम से मुक्त करते हैं।",
+                btn: "HK WorldBank इकोसिस्टम पर जाएं"
             },
             es: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "La visión aeroespacial de HK Group que trasciende Corea del Sur hacia el espacio y el futuro. Abriendo nuevas fronteras más allá de los límites globales y humanos.",
-                btn: "Ir a HK WorldBank"
+                title: "HK-ROSPACE y Visión Aeroespacial Global",
+                desc: "La plataforma aeroespacial central de HK Group, que trasciende las fronteras de Corea del Sur hacia los reinos infinitos de la aldea global y el espacio exterior. A través de la convergencia perfecta de robots humanoides y sistemas espaciales avanzados, liberamos a la humanidad del trabajo pesado.",
+                btn: "Ir al Ecosistema HK WorldBank"
             },
             pt: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "A visão aeroespacial do HK Group que vai além da Coreia do Sul em direção ao espaço e ao futuro. Abrindo novas fronteiras além dos limites globais e humanos.",
-                btn: "Ir para HK WorldBank"
+                title: "HK-ROSPACE & Visão Aeroespacial Global",
+                desc: "A principal plataforma aeroespacial do HK Group, indo além da Coreia do Sul em direção aos reinos infinitos da vila global e do espaço sideral. Por meio da convergência perfeita entre robôs humanoides e sistemas espaciales, libertamos a humanidade do trabalho árduo.",
+                btn: "Ir para o Ecossistema HK WorldBank"
             },
             uk: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "Аерокосмічне бачення HK Group, що виходить за межі Південної Кореї в космос та майбутнє. Відкриваємо нові горизонти за межами глобальних і людських кордонів.",
-                btn: "Перейти до HK WorldBank"
+                title: "HK-ROSPACE та глобальне аерокосмічне бачення",
+                desc: "Головна аерокосмічна платформа HK Group, що виходить за межі Південної Кореї у нескінченні сфери глобального села та космосу. Завдяки злиттю гуманоїдних роботів та передових космічних систем ми звільняємо людство від важкої праці.",
+                btn: "Перейти до екосистеми HK WorldBank"
             },
             ja: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "韓国を超えて宇宙と未来へと飛躍するHKグループの航空宇宙ビジョン。地球村と人類の境界を超えて新たな開拓地を切り開きます。",
-                btn: "HK WorldBankへ移動"
+                title: "HK-ROSPACE ＆ グローバル航空宇宙ビジョン",
+                desc: "大韓民国の国境を越え、地球村と宇宙という無限の領域へと飛躍するHKグループの中核航空宇宙プラットフォームです。ヒューマノイドロボットと最先端宇宙システムの完全な融合により、人類の労働を解放し、未来の青写真をお届けします。",
+                btn: "HK WorldBank エコシステムへ移動"
             },
             ru: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "Аэрокосмическое видение HK Group, выходящее за пределы Южной Кореи в космос и будущее. Открывая новые горизонты за пределами глобальных и человеческих границ.",
-                btn: "Перейти в HK WorldBank"
+                title: "HK-ROSPACE и глобальное аэрокосмическое видение",
+                desc: "Ключевая аэрокосмическая платформа HK Group, выходящая за пределы Южной Кореи в бесконечные просторы глобальной деревни и космоса. Благодаря слиянию гуманоидных роботов и передовых систем мы освобождаем человечество от тяжелого труда.",
+                btn: "Перейти в экосистему HK WorldBank"
             },
             vi: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "Tầm nhìn hàng không vũ trụ của Tập đoàn HK vượt ra ngoài Hàn Quốc hướng tới không gian và tương lai. Mở ra những chân trời mới vượt qua ranh giới toàn cầu và con người.",
-                btn: "Đến HK WorldBank"
+                title: "HK-ROSPACE & Tầm nhìn Hàng không Vũ trụ Toàn cầu",
+                desc: "Nền tảng hàng không vũ trụ cốt lõi của Tập đoàn HK, vươn xa hơn Hàn Quốc vào không gian vô tận. Thông qua sự hội tụ giữa robot hình người và hệ thống vũ trụ, chúng tôi giải phóng nhân loại khỏi lao động nặng nhọc và mang lại tương lai rực rỡ.",
+                btn: "Đến Hệ sinh thái HK WorldBank"
             },
             th: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "วิสัยทัศน์ด้านการบินและอวกาศของ HK Group ที่ก้าวข้ามเกาหลีใต้สู่อวกาศและอนาคต เปิดพรมแดนใหม่ที่ก้าวข้ามขอบเขตระดับโลกและมนุษยชาติ",
-                btn: "ไปที่ HK WorldBank"
+                title: "HK-ROSPACE & วิสัยทัศน์การบินและอวกาศระดับโลก",
+                desc: "แพลตฟอร์มการบินและอวกาศหลักของ HK Group ที่ก้าวข้ามพรมแดนเกาหลีใต้สู่อาณาจักรที่ไร้ขีดจำกัด ผ่านการผสมผสานของหุ่นยนต์ฮิวมานอยด์และระบบอวกาศ เราปลดปล่อยมนุษยชาติจากการใช้แรงงานและมอบอนาคตที่เจริญรุ่งเรือง",
+                btn: "ไปที่ระบบนิเวศ HK WorldBank"
             },
             id: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "Visi dirgantara HK Group melompati Korea Selatan menuju angkasa dan masa depan. Membuka perbatasan baru melampaui batas-batas global dan manusia.",
-                btn: "Buka HK WorldBank"
+                title: "HK-ROSPACE & Visi Dirgantara Global",
+                desc: "Platform dirgantara inti HK Group, melompati Korea Selatan ke alam semesta yang tak terbatas. Melalui konvergensi robot humanoid dan sistem antariksa, kami membebaskan umat manusia dari kerja keras dan memberikan masa depan yang makmur.",
+                btn: "Buka Ekosistem HK WorldBank"
             },
             ps: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "د HK ګروپ فضا لید چې له جنوبي کوریا هاخوا فضا او راتلونکي ته لاره هواروي. د نړیوالو او بشري پولو هاخوا نوي پرانیستې جوړوو.",
-                btn: "HK WorldBank ته لاړ شئ"
+                title: "HK-ROSPACE او نړیوال فضا لید",
+                desc: "د HK ګروپ اصلي فضايي پلیټ فارم، چې له جنوبي کوریا هاخوا لامحدوده ساحو ته لاره هواروي. د روبوټونو او فضايي سیسټمونو د ترکیب له لارې، موږ بشریت له دروند کار څخه آزادوو او سوکاله راتلونکی وړاندې کوو.",
+                btn: "د HK WorldBank اکوسیستم ته لاړ شئ"
             },
             de: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "Die Luft- und Raumfahrtvision der HK Group, die über Südkorea hinaus in den Weltraum und die Zukunft blickt. Eröffnung neuer Horizonte jenseits globaler und menschlicher Grenzen.",
-                btn: "Zu HK WorldBank"
+                title: "HK-ROSPACE & Globale Luft- und Raumfahrtvision",
+                desc: "Die zentrale Luft- und Raumfahrtplattform der HK Group, die über Südkorea hinaus in die unendlichen Weiten vordringt. Durch die Verschmelzung von humanoiden Robotern und Raumfahrtsystemen befreien wir die Menschheit von mühsamer Arbeit.",
+                btn: "Zum HK WorldBank Ökosystem"
             },
             it: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "La visione aerospaziale di HK Group che va oltre la Corea del Sud verso lo spazio e il futuro. Apriamo nuove frontiere oltre i confini globali e umani.",
-                btn: "Vai a HK WorldBank"
+                title: "HK-ROSPACE & Visione Aerospaziale Globale",
+                desc: "La principale piattaforma aerospaziale di HK Group, che va oltre la Corea del Sud nei regni infiniti. Attraverso la convergenza di robot umanoidi e sistemi spaziali, liberiamo l'umanità dal lavoro pesante e forniamo un futuro prospero.",
+                btn: "Vai all'ecosistema HK WorldBank"
             },
             fr: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "La vision aérospatiale du groupe HK qui dépasse la Corée du Sud vers l'espace et l'avenir. Ouvrir de nouvelles frontières au-delà des limites mondiales et humaines.",
-                btn: "Aller à HK WorldBank"
+                title: "HK-ROSPACE & Vision Aérospatiale Globale",
+                desc: "La plateforme aérospatiale centrale du groupe HK, qui s'élance au-delà de la Corée du Sud vers les royaumes infinis. Grâce à la convergence des robots humanoïdes et des systèmes spatiaux, nous libérons l'humanité du travail laborieux.",
+                btn: "Aller à l'écosystème HK WorldBank"
             },
             "en-ng": {
-                title: "ROSPACE & HK-SPACE",
-                desc: "HK Group aerospace vision wey dey leap pass South Korea go space and future. Open new ground pass global and human boundaries.",
-                btn: "Go to HK WorldBank"
+                title: "HK-ROSPACE & Global Aerospace Vision",
+                desc: "The main aerospace platform of HK Group, wey dey leap pass South Korea go infinite spaces. Through the joining of humanoid robots and space systems, we dey free humanity from heavy labour and bring prosperous future.",
+                btn: "Go to HK WorldBank Ecosystem"
             },
             "fr-cm": {
-                title: "ROSPACE & HK-SPACE",
-                desc: "La vision aérospatiale du groupe HK qui s'élance au-delà de la Corée du Sud vers l'espace et le futur. Ouvrant de nouveaux horizons au-delà des limites mondiales et humaines.",
-                btn: "Aller à HK WorldBank"
+                title: "HK-ROSPACE & Vision Aérospatiale Globale",
+                desc: "La plateforme aérospatiale principale du groupe HK, s'élançant par-delà la Corée du Sud vers les espaces infinis. Par la fusion des robots humanoïdes et des systèmes spatiaux, nous libérons l'humanité.",
+                btn: "Aller à l'écosystème HK WorldBank"
             },
             "en-za": {
-                title: "ROSPACE & HK-SPACE",
-                desc: "HK Group aerospace vision leaping past South Korea into space and the future. Opening new frontiers beyond global and human boundaries.",
-                btn: "Go to HK WorldBank"
+                title: "HK-ROSPACE & Global Aerospace Vision",
+                desc: "The core aerospace platform of HK Group, leaping past South Korea into the infinite realms. Through the seamless convergence of humanoid robots and advanced space systems, we liberate humanity from burdensome labor.",
+                btn: "Go to HK WorldBank Ecosystem"
             },
             am: {
-                title: "ROSPACE & HK-SPACE",
-                desc: "ከደቡብ ኮሪያ አልፎ ወደ ጠፈር እና ወደፊት የሚንጠራወጠው የHK ግሩፕ የኤሮስፔስ ራዕይ። ከአለም አቀፍ እና ከሰው ገደቦች በላይ አዳዲስ አድማሶችን እንከፍታለን።",
-                btn: "ወደ HK WorldBank ይሂዱ"
+                title: "HK-ROSPACE እና ዓለም አቀፍ የኤሮስፔስ ራዕይ",
+                desc: "ከደቡብ ኮሪያ አልፎ ወደ ማለቂያ የሌለው ግዛት የሚንጠራወጠው የHK ግሩፕ ዋና የኤሮስፔስ መድረክ። በሁማኖይድ ሮቦቶች እና በጠፈር ስርዓቶች ውህደት ህብረተሰቡን ከከባድ 劳动 ነፃ和ወጣለን።",
+                btn: "ወደ HK WorldBank ሥነ-ምህዳር ይሂዱ"
             }
         };
 
@@ -240,5 +237,3 @@
     </script>
 </body>
 </html>
-
-
