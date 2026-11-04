@@ -1,238 +1,1353 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK-ROSPACE | Global Aerospace & Future Vision</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title id="metaTitle">HK WORLD BANK | 글로벌 차세대 분산 금융 플랫폼</title>
+    <!-- FontAwesome Icons & Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Orbitron:wght@500;700;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #040609;
+            --bg-secondary: #090d16;
+            --card-bg: #0f1726;
+            --card-border: #1b283f;
+            --accent-gold: #ffc107;
+            --accent-gold-glow: rgba(255, 193, 7, 0.4);
+            --accent-cyan: #00f0ff;
+            --accent-cyan-glow: rgba(0, 240, 255, 0.35);
+            --accent-green: #00ffaa;
+            --text-main: #f4f8fb;
+            --text-muted: #8c9cb5;
+            --danger: #ff3b30;
+            --pi-color: #f7931a;
+        }
+
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
+
+        select option {
+            background-color: #0f1726 !important;
+            color: #ffffff !important;
+        }
+
         body {
-            background-color: #05050a;
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
             min-height: 100vh;
+            overflow-x: hidden;
+            padding: 0;
+        }
+
+        .app-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--bg-secondary);
+            min-height: 100vh;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.9);
+            position: relative;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 100px 20px 40px 20px;
+            border-left: 1px solid rgba(255, 255, 255, 0.08);
+            border-right: 1px solid rgba(255, 255, 255, 0.08);
         }
+
         header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
-            background: rgba(5, 5, 10, 0.95);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 1000;
+            background: rgba(9, 13, 22, 0.95);
+            backdrop-filter: blur(14px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--card-border);
         }
-        .logo {
-            font-size: 22px;
-            font-weight: bold;
+
+        .menu-btn {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid var(--card-border);
+            color: var(--accent-gold);
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.1, 0.9, 0.2, 1);
+        }
+
+        .menu-btn:active {
+            transform: scale(0.92);
+        }
+
+        .header-center-title {
+            text-align: center;
+        }
+
+        .header-center-title h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px var(--accent-gold-glow);
+        }
+
+        .header-center-title p {
+            font-size: 10px;
+            color: var(--accent-cyan);
+            letter-spacing: 0.5px;
+        }
+
+        .profile-badge {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--card-border), var(--bg-primary));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent-gold);
+            font-weight: 900;
+            font-size: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+        }
+
+        .lang-bar {
+            padding: 12px 20px;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .lang-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            color: var(--accent-cyan);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .lang-select {
+            background: var(--card-bg);
+            color: #fff;
+            border: 1px solid var(--card-border);
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            outline: none;
+            cursor: pointer;
+            max-width: 210px;
+        }
+
+        main {
+            padding: 24px 20px;
+            flex: 1;
+        }
+
+        .hero-section {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            text-shadow: 0 0 30px var(--accent-gold-glow);
             letter-spacing: 2px;
-            color: #00ffcc;
+            margin-bottom: 6px;
+            text-align: center;
         }
-        .lang-selector select {
-            background: #111b2b;
+
+        .sub-title {
+            font-size: 15px;
+            color: var(--accent-cyan);
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-shadow: 0 0 12px var(--accent-cyan-glow);
+            text-align: center;
+        }
+
+        .dashboard-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 28px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan), var(--accent-green));
+        }
+
+        .dashboard-header {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pi-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .pi-box-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .pi-logo-icon {
+            width: 22px;
+            height: 22px;
+            background: var(--pi-color);
+            color: #fff;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 900;
+            font-size: 13px;
+            font-family: serif;
+            box-shadow: 0 0 10px rgba(247, 147, 26, 0.6);
+        }
+
+        .pi-amount {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 22px;
+            font-weight: 700;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .pi-amount .unit {
+            color: var(--accent-gold);
+            font-size: 14px;
+        }
+
+        .interest-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        .interest-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .interest-value {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent-green);
+            transition: color 0.3s ease;
+        }
+
+        .interest-value.glow {
             color: #ffffff;
-            border: 1px solid #00ffcc;
-            padding: 8px 12px;
-            border-radius: 5px;
+            text-shadow: 0 0 15px var(--accent-green);
+        }
+
+        .mainnet-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent-gold), #ff8800);
+            color: #040609;
+            border: none;
+            padding: 15px;
+            border-radius: 14px;
+            font-weight: 900;
+            font-size: 15px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px var(--accent-gold-glow);
+            transition: all 0.2s ease;
+        }
+
+        .mainnet-btn:active {
+            transform: scale(0.98);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .section-sub {
+            font-size: 11px;
+            color: var(--accent-green);
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .network-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .network-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.1, 0.9, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-height: 135px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .network-card:hover, .network-card:active {
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+            background: #152033;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-top-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .card-icon-1 { color: #00f0ff; font-size: 20px; }
+        .card-icon-2 { color: #ffc107; font-size: 20px; }
+        .card-icon-3 { color: #00ffaa; font-size: 20px; }
+        .card-icon-4 { color: #b085f5; font-size: 20px; }
+        .card-icon-5 { color: #ff3b30; font-size: 20px; }
+        .card-icon-6 { color: #34c759; font-size: 20px; }
+        .card-icon-7 { color: #00c7be; font-size: 20px; }
+        .card-icon-8 { color: #ff9500; font-size: 20px; }
+        .card-icon-9 { color: #5856d6; font-size: 20px; }
+        .card-icon-10 { color: #f7931a; font-size: 20px; }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 4px;
+        }
+
+        .card-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.35;
+        }
+
+        .agi-section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 32px;
+        }
+
+        .agi-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .agi-avatar {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--accent-cyan), #0066ff);
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            color: #fff;
+            box-shadow: 0 0 15px var(--accent-cyan-glow);
+        }
+
+        .agi-title-box h3 {
+            font-size: 17px;
+            color: #fff;
+            font-weight: 800;
+        }
+
+        .agi-title-box p {
+            font-size: 11px;
+            color: var(--accent-cyan);
+        }
+
+        .sonpone-control {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 16px;
+        }
+
+        .sonpone-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .sonpone-label span.val {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .range-slider {
+            width: 100%;
+            accent-color: var(--accent-gold);
+            height: 5px;
+            background: var(--card-border);
+            border-radius: 3px;
+        }
+
+        .chat-box {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 14px;
+            padding: 14px;
+            height: 210px;
+            overflow-y: auto;
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .chat-msg {
+            max-width: 88%;
+            padding: 12px 14px;
+            border-radius: 14px;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        .chat-msg.beeni {
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            color: #d1f9ff;
+            align-self: flex-start;
+        }
+
+        .chat-msg.user {
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid rgba(255, 193, 7, 0.4);
+            color: #fff3cd;
+            align-self: flex-end;
+        }
+
+        .chat-input-box {
+            display: flex;
+            gap: 8px;
+        }
+
+        .chat-input {
+            flex: 1;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .chat-send-btn {
+            background: var(--accent-gold);
+            color: #040609;
+            border: none;
+            padding: 0 18px;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        footer {
+            padding: 24px 20px;
+            background: #020305;
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            font-size: 11px;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        footer p.copyright {
+            margin-bottom: 8px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        footer p.socials {
+            color: var(--accent-cyan);
+            word-break: break-all;
+        }
+
+        .btn-youtube-white {
+            color: #040609 !important;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #ffffff !important;
+            padding: 8px 14px;
+            border-radius: 10px;
+            border: 1px solid #ffffff !important;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-youtube-white i {
+            color: #ff0000 !important;
+        }
+
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(6px);
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-content {
+            position: fixed;
+            top: 0;
+            left: -330px;
+            width: 310px;
+            height: 100vh;
+            background: var(--bg-secondary);
+            border-right: 1px solid var(--card-border);
+            z-index: 201;
+            transition: left 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+            overflow-y: auto;
+            padding: 24px 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-overlay.active .drawer-content {
+            left: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .drawer-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: var(--accent-gold);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .drawer-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .menu-group {
+            margin-bottom: 22px;
+        }
+
+        .menu-group-title {
+            font-size: 11px;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 13px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .menu-item:hover, .menu-item:active {
+            background: var(--card-bg);
+            color: var(--accent-gold);
+        }
+
+        .menu-item i {
+            width: 20px;
+            text-align: center;
+            color: var(--accent-gold);
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+            padding: 20px;
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-body {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            width: 100%;
+            max-width: 440px;
+            max-height: 85vh;
+            border-radius: 20px;
+            padding: 24px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .modal-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--accent-gold);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .input-group {
+            margin-bottom: 16px;
+        }
+
+        .input-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        .max-btn {
+            background: rgba(255, 193, 7, 0.15);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .max-btn:active {
+            background: var(--accent-gold);
+            color: #040609;
+        }
+
+        .form-control {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 12px;
+            color: #fff;
+            font-size: 13px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .action-btn {
+            width: 100%;
+            background: var(--accent-gold);
+            color: #040609;
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-weight: 800;
             font-size: 14px;
             cursor: pointer;
+            margin-top: 10px;
         }
-        h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #00ffcc, #0077ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+
+        .loading-spinner {
+            display: none;
+            width: 14px;
+            height: 14px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: var(--accent-cyan);
+            animation: spin 0.8s linear infinite;
         }
-        p {
-            font-size: 16px;
-            color: #b0b0d0;
-            max-width: 750px;
-            line-height: 1.8;
-            margin-bottom: 30px;
-        }
-        .cta-btn {
-            background: #00ffcc;
-            color: #05050a;
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-            transition: 0.3s;
-        }
-        .cta-btn:hover {
-            background: #00b399;
-        }
+        @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">HK-ROSPACE</div>
-        <div class="lang-selector">
-            <select id="languageSelect" onchange="changeLanguage(this.value)">
-                <option value="ko">한국어 (Korean)</option>
-                <option value="en">English (영어)</option>
-                <option value="zh">中文 (중국어)</option>
-                <option value="ar">العربية (아랍어)</option>
-                <option value="hi">हिन्दी (인도어/힌디어)</option>
-                <option value="es">Español (스페인어)</option>
-                <option value="pt">Português (브라질어)</option>
-                <option value="uk">Українська (우크라이나어)</option>
-                <option value="ja">日本語 (일본어)</option>
-                <option value="ru">Русский (러시아어)</option>
-                <option value="vi">Tiếng Việt (베트남어)</option>
-                <option value="th">ไทย (태국어)</option>
-                <option value="id">Bahasa Indonesia (인도네시아어)</option>
-                <option value="ps">فلسطين / پښتو (팔레스타인어)</option>
-                <option value="de">Deutsch (독일어)</option>
-                <option value="it">Italiano (이태리어)</option>
-                <option value="fr">Français (프랑스어)</option>
-                <option value="en-ng">Nigeria English (나이지리아)</option>
-                <option value="fr-cm">Cameroun Français (카메룬)</option>
-                <option value="en-za">South Africa (남아공)</option>
-                <option value="am">አማርኛ (이디오피아)</option>
+    <div class="app-container">
+        <!-- 상단 고정 헤더 -->
+        <header>
+            <button class="menu-btn" onclick="toggleDrawer()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="header-center-title">
+                <h2>HK WORLD BANK</h2>
+                <p data-i18n="headerSubText">글로벌 차세대 분산 금융</p>
+            </div>
+            <div class="profile-badge">HK</div>
+        </header>
+
+        <!-- 25개국 핵심 글로벌 언어 선택 바 -->
+        <div class="lang-bar">
+            <div class="lang-info">
+                <i class="fa-solid fa-globe"></i>
+                <span data-i18n="langEngineLabel">25개국 핵심 글로벌 언어 엔진</span>
+                <div class="loading-spinner" id="langSpinner"></div>
+            </div>
+            <select class="lang-select" id="langSelect" onchange="changeLanguage(this.value)">
+                <option value="ko" selected>🇰🇷 한국어 (Korean)</option>
+                <option value="en">🇺🇸 영어 (English)</option>
+                <option value="zh-CN">🇨🇳 중국어 간체 (Chinese)</option>
+                <option value="ja">🇯🇵 일본어 (Japanese)</option>
+                <option value="es">🇪🇸 스페인어 (Spanish)</option>
+                <option value="hi">🇮🇳 힌디어 (Hindi)</option>
+                <option value="ar">🇸🇦 아랍어 (Arabic)</option>
+                <option value="pt">🇧🇷 포르투갈어 (Portuguese)</option>
+                <option value="ru">🇷🇺 러시아어 (Russian)</option>
+                <option value="de">🇩🇪 독일어 (German)</option>
+                <option value="fr">🇫🇷 프랑스어 (French)</option>
+                <option value="id">🇮🇩 인도네시아어 (Indonesian)</option>
+                <option value="it">🇮🇹 이탈리아어 (Italian)</option>
+                <option value="tr">🇹🇷 튀르키예어 (Turkish)</option>
+                <option value="vi">🇻🇳 베트남어 (Vietnamese)</option>
+                <option value="th">🇹🇭 태국어 (Thai)</option>
+                <option value="pl">🇵🇱 폴란드어 (Polish)</option>
+                <option value="nl">🇳🇱 네덜란드어 (Dutch)</option>
+                <option value="ms">🇲🇾 말레이어 (Malay)</option>
+                <option value="tl">🇵🇭 필리핀어 (Filipino)</option>
+                <option value="uk">🇺🇦 우크라이나어 (Ukrainian)</option>
+                <option value="fa">🇮🇷 페르시아어 (Persian)</option>
+                <option value="sv">🇸🇪 스웨덴어 (Swedish)</option>
+                <option value="bn">🇧🇩 벵골어 (Bengali)</option>
+                <option value="ur">🇵🇰 우르두어 (Urdu)</option>
             </select>
         </div>
-    </header>
 
-    <main>
-        <h1 id="titleText">HK-ROSPACE & 미래 항공우주 비전</h1>
-        <p id="descText">대한민국의 국경을 넘어 지구촌과 우주라는 무한한 영역으로 도약하는 HK 그룹의 핵심 항공우주 플랫폼입니다. 휴머노이드 로봇과 첨단 우주 시스템의 완벽한 융합을 통해 인류의 노동을 해방하고, 지구촌 모든 이들에게 풍요롭고 찬란한 미래의 청사진을 선사합니다.</p>
-        <a href="https://hkwb.world" class="cta-btn" id="btnText">HK WorldBank 생태계로 이동</a>
-    </main>
+        <main>
+            <!-- 타이틀 영역 -->
+            <div class="hero-section">
+                <h1 class="main-title">HK WORLD BANK</h1>
+                <p class="sub-title" data-i18n="subTitle">빠른 금융 작업 마스터 코어</p>
+            </div>
 
+            <!-- 개인 자산 대시보드 카드 -->
+            <div class="dashboard-card">
+                <div class="dashboard-header">
+                    <span data-i18n="dashTitle">개인 자산 대시보드</span>
+                    <i class="fa-solid fa-vault" style="color: var(--accent-gold);"></i>
+                </div>
+
+                <div class="pi-box">
+                    <div class="pi-box-title">
+                        <span class="pi-logo-icon">π</span>
+                        <span data-i18n="piSyncLabel">보유 수량 (파이 수량 원장 동기화)</span>
+                    </div>
+                    <div class="pi-amount">
+                        <span id="walletBalanceDisplay">314,159.000000</span>
+                        <span class="unit" data-i18n="unitText">파이 / HK</span>
+                    </div>
+                </div>
+
+                <div class="interest-box">
+                    <div class="interest-title">
+                        <i class="fa-solid fa-chart-line" style="color: var(--accent-green);"></i>
+                        <span data-i18n="interestLabel">실시간 누적 이자 (3년 31.41% 연복리)</span>
+                    </div>
+                    <div class="interest-value" id="accumulatedInterest">
+                        12,450,892.600000 HK
+                    </div>
+                </div>
+
+                <button class="mainnet-btn" data-i18n="mainnetBtnText" onclick="triggerMainnetRequest()">
+                    코어팀에게 메인넷 즉시 신청하기
+                </button>
+            </div>
+
+            <!-- 10대 분산 연동망 -->
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="gridSectionTitle">10대 분산 연동망</h2>
+                <span class="section-sub" data-i18n="gridSectionSub">[개별 프로세스 구동]</span>
+            </div>
+
+            <div class="network-grid">
+                <div class="network-card" onclick="openProcessModal('wallet')">
+                    <div class="card-top-center"><i class="fa-solid fa-link card-icon-1"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net1_title">지갑연결</div>
+                        <div class="card-desc" data-i18n="net1_desc">노드 지갑 약정 연동 및 자동 연결</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('transfer')">
+                    <div class="card-top-center"><i class="fa-solid fa-paper-plane card-icon-2"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net2_title">송금</div>
+                        <div class="card-desc" data-i18n="net2_desc">대륙간 초고속 다중서명 암호화 전송 체계</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('payment')">
+                    <div class="card-top-center"><i class="fa-solid fa-credit-card card-icon-3"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net3_title">결제</div>
+                        <div class="card-desc" data-i18n="net3_desc">현금·카드·타코인 실시간 상거래 안전결제</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('deposit')">
+                    <div class="card-top-center"><i class="fa-solid fa-vault card-icon-4"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net4_title">예치</div>
+                        <div class="card-desc" data-i18n="net4_desc">3년 만기 31.41% 연복리 자산 신탁 금고</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('reward')">
+                    <div class="card-top-center"><i class="fa-solid fa-gift card-icon-5"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net5_title">보상</div>
+                        <div class="card-desc" data-i18n="net5_desc">기여도 기반 장려금 금고 적립 엔진</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('ubi')">
+                    <div class="card-top-center"><i class="fa-solid fa-hand-holding-dollar card-icon-6"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net6_title">기본소득</div>
+                        <div class="card-desc" data-i18n="net6_desc">HK 사회 재단 & 지자체 기본소득 분배 모델</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('swap')">
+                    <div class="card-top-center"><i class="fa-solid fa-right-left card-icon-7"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net7_title">교환</div>
+                        <div class="card-desc" data-i18n="net7_desc">현금·카드·타코인 즉시 맞교환 구매</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('dex')">
+                    <div class="card-top-center"><i class="fa-solid fa-bolt card-icon-8"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net8_title">탈중앙화 교환</div>
+                        <div class="card-desc" data-i18n="net8_desc">자율 제어 개인 간 직접 거래 유동성 매칭</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('lp')">
+                    <div class="card-top-center"><i class="fa-solid fa-layer-group card-icon-9"></i></div>
+                    <div>
+                        <div class="card-title" data-i18n="net9_title">유동성 예치</div>
+                        <div class="card-desc" data-i18n="net9_desc">유동성 공급 증명 및 고배당 권한 설정</div>
+                    </div>
+                </div>
+
+                <div class="network-card" onclick="openProcessModal('pishow')">
+                    <div class="card-top-center"><span class="pi-logo-icon" style="width: 26px; height: 26px; font-size: 15px;">π</span></div>
+                    <div>
+                        <div class="card-title" data-i18n="net10_title">파이 수량 동기화</div>
+                        <div class="card-desc" data-i18n="net10_desc">파이 자산 메인넷 원장 실시간 일치화</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AGI 삐니 고객센터 -->
+            <div class="agi-section">
+                <div class="agi-header">
+                    <div class="agi-avatar"><i class="fa-solid fa-robot"></i></div>
+                    <div class="agi-title-box">
+                        <h3 data-i18n="agiTitle">AGI 삐니 고객센터</h3>
+                        <p data-i18n="agiSub">손폰(SONPONE) 자동 반응 및 AI 종합 제어</p>
+                    </div>
+                </div>
+
+                <div class="sonpone-control">
+                    <div class="sonpone-label">
+                        <span data-i18n="sonponeLabelText">손폰(SONPONE) 감지 감도:</span>
+                        <span class="val" id="sonponeVal">99.9% (실시간 일치)</span>
+                    </div>
+                    <input type="range" class="range-slider" min="50" max="100" value="99" id="sonponeSlider" oninput="updateSonpone(this.value)">
+                </div>
+
+                <div class="chat-box" id="chatBox">
+                    <div class="chat-msg beeni" data-i18n="initialBeeniMsg">
+                        [AGI 삐니]: 바이낸스·시중은행 해킹 원천 차단형 자금세탁방지 보안 시스템 가동 중입니다. 혜공 형님, 지시해 주십시오!
+                    </div>
+                </div>
+
+                <div class="chat-input-box">
+                    <input type="text" class="chat-input" id="chatInput" data-i18n-placeholder="chatInputPlaceholder" placeholder="삐니에게 질문 입력..." onkeypress="handleKeyPress(event)">
+                    <button class="chat-send-btn" data-i18n="chatSendBtn" onclick="sendChatMessage()">전송</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- 푸터 영역 -->
+        <footer>
+            <p class="copyright">© 2026 HK WORLD BANK. All Rights Reserved.</p>
+            <p class="socials" style="margin-bottom: 12px;" data-i18n="supportEmailText">
+                지원 문의: support@hkwb.world
+            </p>
+            <div style="display: flex; justify-content: center; gap: 16px; align-items: center;">
+                <a href="https://www.youtube.com/@Hyekong2026" target="_blank" class="btn-youtube-white">
+                    <i class="fa-brands fa-youtube"></i> YouTube (@Hyekong2026)
+                </a>
+                <a href="https://www.tiktok.com/@hyekong2026" target="_blank" style="color: #fff; text-decoration: none; font-size: 13px; font-weight: 700; display: flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08); padding: 8px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.15);">
+                    <i class="fa-brands fa-tiktok"></i> TikTok (@hyekong2026)
+                </a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 슬라이드 서랍 메뉴 -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title" data-i18n="drawerTitle">HK 탐색기</span>
+                <button class="drawer-close" onclick="toggleDrawer()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="menu-group">
+                <div class="menu-group-title" data-i18n="menuGroup1Title">핵심 법률 및 보안 규격</div>
+                <div class="menu-item" onclick="openInfoModal('whitepaper')">
+                    <i class="fa-solid fa-file-contract"></i> <span data-i18n="menu_wp">백서 (Whitepaper v3.1 상세 40선)</span>
+                </div>
+                <div class="menu-item" onclick="openInfoModal('faq')">
+                    <i class="fa-solid fa-circle-question"></i> <span data-i18n="menu_faq">자주 묻는 질문 (FAQ 20선 심층)</span>
+                </div>
+                <div class="menu-item" onclick="openInfoModal('policies')">
+                    <i class="fa-solid fa-shield-halved"></i> <span data-i18n="menu_pol">3대 정책 (자금세탁방지·고객확인·철통보안)</span>
+                </div>
+                <div class="menu-item" onclick="openInfoModal('regulations')">
+                    <i class="fa-solid fa-scale-balanced"></i> <span data-i18n="menu_reg">25개국 디지털 자산법 및 해킹 방어 규격</span>
+                </div>
+                <div class="menu-item" onclick="openInfoModal('fatf_travel_rule')">
+                    <i class="fa-solid fa-gavel"></i> <span data-i18n="menu_fatf">국제 자금세탁방지 트래블룰 & 실시간 제재 검증</span>
+                </div>
+            </div>
+
+            <div class="menu-group">
+                <div class="menu-group-title" data-i18n="menuGroup2Title">HK 글로벌 생태계 거점</div>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank">
+                    <i class="fa-solid fa-robot"></i> <span data-i18n="hub_robot">로봇: HK-ROBOT</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank">
+                    <i class="fa-solid fa-glasses"></i> <span data-i18n="hub_nexus">스마트 글래스: HK-NEXUS</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank">
+                    <i class="fa-solid fa-helicopter" style="color:var(--accent-gold);"></i> <span data-i18n="hub_uam">도심항공교통: HK-UAM</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-FUSION" target="_blank">
+                    <i class="fa-solid fa-atom"></i> <span data-i18n="hub_fusion">인공태양: HK-FUSION</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-QUANTUMBIO" target="_blank">
+                    <i class="fa-solid fa-dna"></i> <span data-i18n="hub_bio">퀀텀바이오: HK-QUANTUMBIO</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-SPACE" target="_blank">
+                    <i class="fa-solid fa-shuttle-space"></i> <span data-i18n="hub_space">우주모빌리티: HK-SPACE</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-PARTSBANK" target="_blank">
+                    <i class="fa-solid fa-microchip"></i> <span data-i18n="hub_parts">부품뱅크: HK-PARTSBANK</span>
+                </a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-DEFENCE-HUB" target="_blank">
+                    <i class="fa-solid fa-shield-cat"></i> <span data-i18n="hub_defence">국방기술: HK-DEFENCE-HUB</span>
+                </a>
+                <div class="menu-item" onclick="openInfoModal('t165')">
+                    <i class="fa-solid fa-city"></i> <span data-i18n="hub_t165">T165 초특급 랜드마크 허브 (경주 사옥)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 팝업 창 -->
+    <div class="modal" id="appModal">
+        <div class="modal-body">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">프로세스 구동</h3>
+                <button class="modal-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <!-- 25개국어 실시간 다국어 동적 변환 엔진 스크립트 -->
     <script>
-        const translations = {
-            ko: {
-                title: "HK-ROSPACE & 미래 항공우주 비전",
-                desc: "대한민국의 국경을 넘어 지구촌과 우주라는 무한한 영역으로 도약하는 HK 그룹의 핵심 항공우주 플랫폼입니다. 휴머노이드 로봇과 첨단 우주 시스템의 완벽한 융합을 통해 인류의 노동을 해방하고, 지구촌 모든 이들에게 풍요롭고 찬란한 미래의 청사진을 선사합니다.",
-                btn: "HK WorldBank 생태계로 이동"
-            },
-            en: {
-                title: "HK-ROSPACE & Global Aerospace Vision",
-                desc: "The core aerospace platform of HK Group, leaping beyond South Korea into the infinite realms of the global village and outer space. Through the seamless convergence of humanoid robots and advanced space systems, we liberate humanity from burdensome labor and deliver a prosperous, brilliant blueprint of the future to everyone.",
-                btn: "Go to HK WorldBank Ecosystem"
-            },
-            zh: {
-                title: "HK-ROSPACE 与全球航空航天愿景",
-                desc: "这是HK集团的核心航空航天平台，超越韩国国界，跃升至地球村与太空的无限领域。通过人形机器人与尖端太空系统的完美融合，我们将全人类从劳动中解放出来，为地球上的每一个人呈现一幅繁荣辉煌的未来蓝图。",
-                btn: "前往 HK WorldBank 生态系统"
-            },
-            ar: {
-                title: "HK-ROSPACE والرؤية الفضائية العالمية",
-                desc: "منصة الطيران والفضاء الأساسية لمجموعة HK، والتي تتجاوز حدود كوريا الجنوبية لتنطلق إلى الآفاق اللانهائية للقرية العالمية والفضاء الخارجي. من خلال التكامل السلس بين الروبوتات البشرية وأنظمة الفضاء المتقدمة، نتحرر البشرية من العمالة الشاقة ونقدم مخططاً مستقبلياً مشرقاً لكل فرد.",
-                btn: "الذهاب إلى نظام HK WorldBank البيئي"
-            },
-            hi: {
-                title: "HK-ROSPACE और वैश्विक एयरोस्पेस विजन",
-                desc: "एचके ग्रुप का मुख्य एयरोस्पेस प्लेटफॉर्म, जो दक्षिण कोरिया की सीमाओं से परे वैश्विक गांव और बाहरी अंतरिक्ष के अनंत क्षेत्रों में छलांग लगा रहा है। ह्यूमेनोइड रोबोट और उन्नत अंतरिक्ष प्रणालियों के सहज अभिसरण के माध्यम से, हम मानवता को श्रम से मुक्त करते हैं।",
-                btn: "HK WorldBank इकोसिस्टम पर जाएं"
-            },
-            es: {
-                title: "HK-ROSPACE y Visión Aeroespacial Global",
-                desc: "La plataforma aeroespacial central de HK Group, que trasciende las fronteras de Corea del Sur hacia los reinos infinitos de la aldea global y el espacio exterior. A través de la convergencia perfecta de robots humanoides y sistemas espaciales avanzados, liberamos a la humanidad del trabajo pesado.",
-                btn: "Ir al Ecosistema HK WorldBank"
-            },
-            pt: {
-                title: "HK-ROSPACE & Visão Aeroespacial Global",
-                desc: "A principal plataforma aeroespacial do HK Group, indo além da Coreia do Sul em direção aos reinos infinitos da vila global e do espaço sideral. Por meio da convergência perfeita entre robôs humanoides e sistemas espaciales, libertamos a humanidade do trabalho árduo.",
-                btn: "Ir para o Ecossistema HK WorldBank"
-            },
-            uk: {
-                title: "HK-ROSPACE та глобальне аерокосмічне бачення",
-                desc: "Головна аерокосмічна платформа HK Group, що виходить за межі Південної Кореї у нескінченні сфери глобального села та космосу. Завдяки злиттю гуманоїдних роботів та передових космічних систем ми звільняємо людство від важкої праці.",
-                btn: "Перейти до екосистеми HK WorldBank"
-            },
-            ja: {
-                title: "HK-ROSPACE ＆ グローバル航空宇宙ビジョン",
-                desc: "大韓民国の国境を越え、地球村と宇宙という無限の領域へと飛躍するHKグループの中核航空宇宙プラットフォームです。ヒューマノイドロボットと最先端宇宙システムの完全な融合により、人類の労働を解放し、未来の青写真をお届けします。",
-                btn: "HK WorldBank エコシステムへ移動"
-            },
-            ru: {
-                title: "HK-ROSPACE и глобальное аэрокосмическое видение",
-                desc: "Ключевая аэрокосмическая платформа HK Group, выходящая за пределы Южной Кореи в бесконечные просторы глобальной деревни и космоса. Благодаря слиянию гуманоидных роботов и передовых систем мы освобождаем человечество от тяжелого труда.",
-                btn: "Перейти в экосистему HK WorldBank"
-            },
-            vi: {
-                title: "HK-ROSPACE & Tầm nhìn Hàng không Vũ trụ Toàn cầu",
-                desc: "Nền tảng hàng không vũ trụ cốt lõi của Tập đoàn HK, vươn xa hơn Hàn Quốc vào không gian vô tận. Thông qua sự hội tụ giữa robot hình người và hệ thống vũ trụ, chúng tôi giải phóng nhân loại khỏi lao động nặng nhọc và mang lại tương lai rực rỡ.",
-                btn: "Đến Hệ sinh thái HK WorldBank"
-            },
-            th: {
-                title: "HK-ROSPACE & วิสัยทัศน์การบินและอวกาศระดับโลก",
-                desc: "แพลตฟอร์มการบินและอวกาศหลักของ HK Group ที่ก้าวข้ามพรมแดนเกาหลีใต้สู่อาณาจักรที่ไร้ขีดจำกัด ผ่านการผสมผสานของหุ่นยนต์ฮิวมานอยด์และระบบอวกาศ เราปลดปล่อยมนุษยชาติจากการใช้แรงงานและมอบอนาคตที่เจริญรุ่งเรือง",
-                btn: "ไปที่ระบบนิเวศ HK WorldBank"
-            },
-            id: {
-                title: "HK-ROSPACE & Visi Dirgantara Global",
-                desc: "Platform dirgantara inti HK Group, melompati Korea Selatan ke alam semesta yang tak terbatas. Melalui konvergensi robot humanoid dan sistem antariksa, kami membebaskan umat manusia dari kerja keras dan memberikan masa depan yang makmur.",
-                btn: "Buka Ekosistem HK WorldBank"
-            },
-            ps: {
-                title: "HK-ROSPACE او نړیوال فضا لید",
-                desc: "د HK ګروپ اصلي فضايي پلیټ فارم، چې له جنوبي کوریا هاخوا لامحدوده ساحو ته لاره هواروي. د روبوټونو او فضايي سیسټمونو د ترکیب له لارې، موږ بشریت له دروند کار څخه آزادوو او سوکاله راتلونکی وړاندې کوو.",
-                btn: "د HK WorldBank اکوسیستم ته لاړ شئ"
-            },
-            de: {
-                title: "HK-ROSPACE & Globale Luft- und Raumfahrtvision",
-                desc: "Die zentrale Luft- und Raumfahrtplattform der HK Group, die über Südkorea hinaus in die unendlichen Weiten vordringt. Durch die Verschmelzung von humanoiden Robotern und Raumfahrtsystemen befreien wir die Menschheit von mühsamer Arbeit.",
-                btn: "Zum HK WorldBank Ökosystem"
-            },
-            it: {
-                title: "HK-ROSPACE & Visione Aerospaziale Globale",
-                desc: "La principale piattaforma aerospaziale di HK Group, che va oltre la Corea del Sud nei regni infiniti. Attraverso la convergenza di robot umanoidi e sistemi spaziali, liberiamo l'umanità dal lavoro pesante e forniamo un futuro prospero.",
-                btn: "Vai all'ecosistema HK WorldBank"
-            },
-            fr: {
-                title: "HK-ROSPACE & Vision Aérospatiale Globale",
-                desc: "La plateforme aérospatiale centrale du groupe HK, qui s'élance au-delà de la Corée du Sud vers les royaumes infinis. Grâce à la convergence des robots humanoïdes et des systèmes spatiaux, nous libérons l'humanité du travail laborieux.",
-                btn: "Aller à l'écosystème HK WorldBank"
-            },
-            "en-ng": {
-                title: "HK-ROSPACE & Global Aerospace Vision",
-                desc: "The main aerospace platform of HK Group, wey dey leap pass South Korea go infinite spaces. Through the joining of humanoid robots and space systems, we dey free humanity from heavy labour and bring prosperous future.",
-                btn: "Go to HK WorldBank Ecosystem"
-            },
-            "fr-cm": {
-                title: "HK-ROSPACE & Vision Aérospatiale Globale",
-                desc: "La plateforme aérospatiale principale du groupe HK, s'élançant par-delà la Corée du Sud vers les espaces infinis. Par la fusion des robots humanoïdes et des systèmes spatiaux, nous libérons l'humanité.",
-                btn: "Aller à l'écosystème HK WorldBank"
-            },
-            "en-za": {
-                title: "HK-ROSPACE & Global Aerospace Vision",
-                desc: "The core aerospace platform of HK Group, leaping past South Korea into the infinite realms. Through the seamless convergence of humanoid robots and advanced space systems, we liberate humanity from burdensome labor.",
-                btn: "Go to HK WorldBank Ecosystem"
-            },
-            am: {
-                title: "HK-ROSPACE እና ዓለም አቀፍ የኤሮስፔስ ራዕይ",
-                desc: "ከደቡብ ኮሪያ አልፎ ወደ ማለቂያ የሌለው ግዛት የሚንጠራወጠው የHK ግሩፕ ዋና የኤሮስፔስ መድረክ። በሁማኖይድ ሮቦቶች እና በጠፈር ስርዓቶች ውህደት ህብረተሰቡን ከከባድ 劳动 ነፃ和ወጣለን።",
-                btn: "ወደ HK WorldBank ሥነ-ምህዳር ይሂዱ"
-            }
+        let baseInterest = 12450892.600000;
+        let currentWalletBalance = 314159.000000;
+        let currentLang = 'ko';
+        let generatedAuthCode = "123456";
+        let activeProcessId = null;
+        let activeModalType = null;
+
+        const koSource = {
+            headerSubText: "글로벌 차세대 분산 금융", langEngineLabel: "25개국 핵심 글로벌 언어 엔진", subTitle: "빠른 금융 작업 마스터 코어",
+            dashTitle: "개인 자산 대시보드", piSyncLabel: "보유 수량 (파이 수량 원장 동기화)", unitText: "파이 / HK",
+            interestLabel: "실시간 누적 이자 (3년 31.41% 연복리)", mainnetBtnText: "코어팀에게 메인넷 즉시 신청하기",
+            gridSectionTitle: "10대 분산 연동망", gridSectionSub: "[개별 프로세스 구동]",
+            agiTitle: "AGI 삐니 고객센터", agiSub: "손폰(SONPONE) 자동 반응 및 AI 종합 제어", sonponeLabelText: "손폰(SONPONE) 감지 감도:", syncText: "(실시간 일치)",
+            initialBeeniMsg: "[AGI 삐니]: 바이낸스·시중은행 해킹 원천 차단형 자금세탁방지 보안 시스템 가동 중입니다. 혜공 형님, 지시해 주십시오!",
+            chatInputPlaceholder: "삐니에게 질문 입력...", chatSendBtn: "전송", supportEmailText: "지원 문의: support@hkwb.world",
+            net1_title: "지갑연결", net1_desc: "노드 지갑 약정 연동 및 자동 연결",
+            net2_title: "송금", net2_desc: "대륙간 초고속 다중서명 암호화 전송 체계",
+            net3_title: "결제", net3_desc: "현금·카드·타코인 실시간 상거래 안전결제",
+            net4_title: "예치", net4_desc: "3년 만기 31.41% 연복리 자산 신탁 금고",
+            net5_title: "보상", net5_desc: "기여도 기반 장려금 금고 적립 엔진",
+            net6_title: "기본소득", net6_desc: "HK 사회 재단 & 지자체 기본소득 분배 모델",
+            net7_title: "교환", net7_desc: "현금·카드·타코인 즉시 맞교환 구매",
+            net8_title: "탈중앙화 교환", net8_desc: "자율 제어 개인 간 직접 거래 유동성 매칭",
+            net9_title: "유동성 예치", net9_desc: "유동성 공급 증명 및 고배당 권한 설정",
+            net10_title: "파이 수량 동기화", net10_desc: "파이 자산 메인넷 원장 실시간 일치화",
+            drawerTitle: "HK 탐색기", menuGroup1Title: "핵심 법률 및 보안 규격", menuGroup2Title: "HK 글로벌 생태계 거점",
+            menu_wp: "백서 (Whitepaper v3.1 상세 40선)", menu_faq: "자주 묻는 질문 (FAQ 20선 심층)", menu_pol: "3대 정책 (자금세탁방지·고객확인·철통보안)",
+            menu_reg: "25개국 디지털 자산법 및 해킹 방어 규격", menu_fatf: "국제 자금세탁방지 트래블룰 & 실시간 제재 검증",
+            hub_robot: "로봇: HK-ROBOT", hub_nexus: "스마트 글래스: HK-NEXUS", hub_uam: "도심항공교통: HK-UAM", hub_fusion: "인공태양: HK-FUSION",
+            hub_bio: "퀀텀바이오: HK-QUANTUMBIO", hub_space: "우주모빌리티: HK-SPACE", hub_parts: "부품뱅크: HK-PARTSBANK", hub_defence: "국방기술: HK-DEFENCE-HUB",
+            hub_t165: "T165 초특급 랜드마크 허브 (경주 사옥)"
         };
 
-        function changeLanguage(lang) {
-            const data = translations[lang] || translations["ko"];
-            document.getElementById("titleText").innerText = data.title;
-            document.getElementById("descText").innerText = data.desc;
-            document.getElementById("btnText").innerText = data.btn;
+        const translationCache = { ko: koSource };
+
+        async function fetchAutoTranslation(targetLang) {
+            if (translationCache[targetLang]) return translationCache[targetLang];
+
+            const spinner = document.getElementById('langSpinner');
+            if (spinner) spinner.style.display = 'inline-block';
+
+            const translatedObj = {};
+            const keys = Object.keys(koSource);
+            
+            try {
+                const promises = keys.map(async (key) => {
+                    const text = koSource[key];
+                    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=ko&tl=${targetLang}&dt=t&q=${encodeURIComponent(text)}`;
+                    const res = await fetch(url);
+                    const data = await res.json();
+                    translatedObj[key] = data[0][0][0];
+                });
+
+                await Promise.all(promises);
+                translationCache[targetLang] = translatedObj;
+            } catch (err) {
+                console.error("Translation API error:", err);
+                return koSource;
+            } finally {
+                if (spinner) spinner.style.display = 'none';
+            }
+
+            return translatedObj;
+        }
+
+        window.onload = function() {
+            openProcessModal('wallet');
+        };
+
+        setInterval(() => {
+            baseInterest += 0.001250;
+            const el = document.getElementById('accumulatedInterest');
+            if(el) {
+                el.innerText = baseInterest.toLocaleString('en-US', {minimumFractionDigits: 6, maximumFractionDigits: 6}) + " HK";
+                el.classList.add('glow');
+                setTimeout(() => el.classList.remove('glow'), 400);
+            }
+        }, 1000);
+
+        function toggleDrawer() {
+            document.getElementById('drawerOverlay').classList.toggle('active');
+        }
+
+        function closeDrawerOutside(event) {
+            if (event.target.id === 'drawerOverlay') {
+                toggleDrawer();
+            }
+        }
+
+        function updateSonpone(val) {
+            const sonponeValEl = document.getElementById('sonponeVal');
+            if(sonponeValEl) {
+                const curDict = translationCache[currentLang] || koSource;
+                sonponeValEl.innerText = val + "% " + (curDict.syncText || "(실시간 일치)");
+            }
+        }
+
+        function triggerMainnetRequest() {
+            alert("테스트 파이 원장 동기화 및 철통 보안 테스트넷 전송 신청이 정상 완료되었습니다!");
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const chatBox = document.getElementById('chatBox');
+            const text = input.value.trim();
+
+            if (!text) return;
+
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg user';
+            userMsg.innerText = text;
+            chatBox.appendChild(userMsg);
+
+            input.value = '';
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            setTimeout(() => {
+                const beeniMsg = document.createElement('div');
+                beeniMsg.className = 'chat-msg beeni';
+                beeniMsg.innerText = `[AGI 삐니]: "${text}" 지시를 수신했습니다. 해킹 방어 백엔드 검증을 거쳐 실시간 처리 중입니다.`;
+                chatBox.appendChild(beeniMsg);
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 600);
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        function openProcessModal(processId) {
+            activeProcessId = processId;
+            activeModalType = null;
+            renderProcessModalContent();
+        }
+
+        function autoLoadWalletAddress() {
+            const walletInput = document.getElementById('nodeWalletAddress');
+            if(walletInput) {
+                walletInput.value = "GBX7QZ4HKWB2026AMLKYCSECNODEUSER";
+            }
+        }
+
+        function renderProcessModalContent() {
+            const processId = activeProcessId;
+            if (!processId) return;
+
+            const modal = document.getElementById('appModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            generatedAuthCode = Math.floor(100000 + Math.random() * 900000).toString();
+
+            if (processId === 'wallet') {
+                title.innerText = "노드 지갑 약정 연동";
+                content.innerHTML = `
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:14px;">자동 연동 버튼을 눌러 테스트 지갑 주소를 불러오세요.</div>
+                    <div class="input-group">
+                        <label class="input-label"><span>테스트넷 지갑 주소</span> <button class="max-btn" onclick="autoLoadWalletAddress()">자동 연동</button></label>
+                        <input class="form-control" id="nodeWalletAddress" placeholder="자동 연동 버튼을 누르세요">
+                    </div>
+                    <div class="input-group">
+                        <label class="input-label">인증번호 (발급됨: <span style="color:var(--accent-gold); font-weight:700;">${generatedAuthCode}</span>)</label>
+                        <input class="form-control" id="userInputCode" placeholder="6자리 인증번호 입력" maxlength="6">
+                    </div>
+                    <button class="action-btn" onclick="verifyAndExecute('wallet')">인증 승인 및 지갑 연결</button>
+                `;
+            } else {
+                title.innerText = "프로세스 구동 승인 (" + processId.toUpperCase() + ")";
+                content.innerHTML = `
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:14px;">철통 보안 프로토콜 및 실시간 AML 검증을 진행합니다.</div>
+                    <div class="input-group">
+                        <label class="input-label">인증번호 (발급됨: <span style="color:var(--accent-gold); font-weight:700;">${generatedAuthCode}</span>)</label>
+                        <input class="form-control" id="userInputCode" placeholder="6자리 인증번호 입력" maxlength="6">
+                    </div>
+                    <button class="action-btn" onclick="verifyAndExecute('${processId}')">승인 및 실행</button>
+                `;
+            }
+            modal.classList.add('active');
+        }
+
+        function verifyAndExecute(processId) {
+            const codeInput = document.getElementById('userInputCode');
+            const userEntered = codeInput ? codeInput.value.trim() : "";
+
+            if(userEntered !== generatedAuthCode) {
+                alert("❌ 인증번호가 일치하지 않습니다. 발급된 6자리 번호를 정확히 입력해 주세요.");
+                return;
+            }
+           
+            alert("✅ [철통 보안 인증 성공] " + processId + " 프로세스가 정상 완료되었습니다.");
+            closeModal();
+        }
+
+        function openInfoModal(type) {
+            activeModalType = type;
+            activeProcessId = null;
+            toggleDrawer();
+            renderInfoModalContent();
+        }
+
+        function openInfoModal(type) {
+            activeModalType = type;
+            activeProcessId = null;
+            toggleDrawer();
+            const modal = document.getElementById('appModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+
+            title.innerText = "정보 및 보안 규격 문서";
+            content.innerHTML = `<div style="font-size:12px; line-height:1.6; color:var(--text-muted);">HK WORLD BANK 25개국 핵심 언어 지원 및 해킹 방어 컴플라이언스 상세 규격 문서입니다.</div>`;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('appModal').classList.remove('active');
+            activeModalType = null;
+            activeProcessId = null;
+        }
+
+        async function changeLanguage(lang) {
+            currentLang = lang;
+            let t = await fetchAutoTranslation(lang);
+
+            const metaTitleEl = document.getElementById('metaTitle');
+            if(metaTitleEl) {
+                metaTitleEl.innerText = t.dashTitle ? `HK WORLD BANK | ${t.dashTitle}` : "HK WORLD BANK";
+            }
+           
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(t[key]) {
+                    el.innerText = t[key];
+                }
+            });
+
+            const inputs = document.querySelectorAll('[data-i18n-placeholder]');
+            inputs.forEach(input => {
+                const key = input.getAttribute('data-i18n-placeholder');
+                if(t[key]) {
+                    input.placeholder = t[key];
+                }
+            });
+
+            document.dir = ['ar', 'fa', 'ur', 'he'].includes(lang) ? 'rtl' : 'ltr';
+            const slider = document.getElementById('sonponeSlider');
+            if(slider) {
+                updateSonpone(slider.value);
+            }
         }
     </script>
 </body>
