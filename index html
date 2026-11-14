@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HK WorldBank - 글로벌 분산 디지털 금융 & 사회환원 플랫폼</title>
     <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,7 @@
             theme: {
                 extend: {
                     colors: {
-                        darkBg: '#070a14',
+                        darkBg: '#05070d',
                         cardBg: '#0f172a',
                         cardHover: '#1e293b',
                         neonBlue: '#3b82f6',
@@ -31,13 +31,13 @@
         }
     </script>
     <style>
-        body { background-color: #070a14; color: #f1f5f9; font-family: 'Pretendard', sans-serif; }
+        body { background-color: #05070d; color: #f1f5f9; font-family: 'Pretendard', sans-serif; }
         .glass-panel { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(59, 130, 246, 0.25); }
         .glow-blue { box-shadow: 0 0 35px rgba(59, 130, 246, 0.2); }
         .glow-emerald { box-shadow: 0 0 35px rgba(16, 185, 129, 0.2); }
         .glow-purple { box-shadow: 0 0 35px rgba(139, 92, 246, 0.2); }
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #070a14; }
+        ::-webkit-scrollbar-track { background: #05070d; }
         ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #475569; }
     </style>
@@ -53,25 +53,25 @@
             <div>
                 <div class="flex items-center gap-2">
                     <h1 class="text-xl font-extrabold tracking-tight text-white">HK WorldBank</h1>
-                    <span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-500/30 font-mono">hkwb.world</span>
+                    <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-blue-950 text-blue-400 border border-blue-500/30 font-mono">hkwb.world</span>
                 </div>
                 <p class="text-xs text-slate-400">총괄회장: <strong class="text-slate-200">이재완 (혜공)</strong> | 추천인 ID: <span class="text-neonEmerald font-mono font-bold">ljw2358</span></p>
             </div>
         </div>
         
         <!-- 네비게이트 메뉴 -->
-        <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-300">
+        <nav class="hidden xl:flex items-center space-x-6 text-sm font-medium text-slate-300">
             <a href="#agi-chat" class="hover:text-neonBlue transition">AGI 삐니</a>
+            <a href="#modules" class="hover:text-neonBlue transition">10대 모듈</a>
             <a href="#whitepaper" class="hover:text-neonBlue transition">백서 100선</a>
             <a href="#faq" class="hover:text-neonBlue transition">FAQ 20선</a>
-            <a href="#social-impact" class="hover:text-neonBlue transition">사회환원</a>
-            <a href="#modules" class="hover:text-neonBlue transition">10대 모듈</a>
+            <a href="#social-impact" class="hover:text-neonBlue transition">사회환원 & UBI</a>
             <a href="#policies" class="hover:text-neonBlue transition">정책 & 법안</a>
             <a href="#network" class="hover:text-neonBlue transition">분산 연동망</a>
         </nav>
 
         <div class="flex items-center space-x-3">
-            <a href="mailto:support@hkwb.world" class="hidden sm:flex items-center space-x-1.5 text-xs bg-slate-800/80 hover:bg-slate-700 text-slate-200 px-3.5 py-2 rounded-xl border border-slate-700 transition">
+            <a href="mailto:support@hkwb.world" class="hidden sm:flex items-center space-x-1.5 text-xs bg-slate-800/80 hover:bg-slate-700 text-slate-200 px-3.5 py-2 rounded-xl border border-slate-700 transition font-mono">
                 <span class="material-symbols-outlined text-sm text-neonBlue">support_agent</span>
                 <span>support@hkwb.world</span>
             </a>
@@ -91,7 +91,7 @@
             <div class="absolute -left-32 -bottom-32 w-96 h-96 bg-emerald-600/15 rounded-full blur-3xl pointer-events-none"></div>
             
             <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-950/90 text-blue-400 text-xs font-semibold mb-6 border border-blue-500/30">
-                <span class="material-symbols-outlined text-sm">verified</span> 글로벌 웹3 디지털 뱅킹 & 사회환원 통합 플랫폼
+                <span class="material-symbols-outlined text-sm">verified</span> 글로벌 웹3 디지털 뱅킹 & 사회환원 통합 플랫폼 (`hkwb.world`)
             </span>
             <h2 class="text-3xl sm:text-6xl font-extrabold text-white tracking-tight mb-6 leading-tight">
                 인류와 기술이 공존하는 <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-emerald-400">차세대 디지털 금융 혁신</span>
@@ -109,7 +109,7 @@
             </div>
         </section>
 
-        <!-- 섹션 1: 고객센터 AGI '삐니' 60개국어 실시간 구동 및 인터랙티브 시뮬레이터 -->
+        <!-- 섹션 1: 고객센터 AGI '삐니' 60개국어 실시간 구동 및 인터랙티브 챗봇 -->
         <section id="agi-chat" class="glass-panel rounded-3xl p-6 sm:p-10 glow-purple">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 pb-6 border-b border-slate-800">
                 <div class="flex items-center gap-4">
@@ -145,13 +145,13 @@
                 <div id="chatHistory" class="h-64 overflow-y-auto space-y-4 pr-2 text-sm">
                     <div class="flex items-start gap-3">
                         <div class="w-8 h-8 rounded-xl bg-purple-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xs">삐니</div>
-                        <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border border-slate-800 text-slate-200 max-w-xl">
-                            안녕하세요! 회장님(혜공)과 글로벌 고객님들을 모시는 AGI 삐니입니다. 60개국어 동시 통역 및 HK WorldBank의 모든 금융·예치·보상·연동망 문의를 도와드리고 있습니다. 무엇을 도와드릴까요?
+                        <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border border-slate-800 text-slate-200 max-w-xl leading-relaxed">
+                            안녕하세요! 회장님(혜공)과 글로벌 고객님들을 모시는 AGI 삐니입니다. 60개국어 동시 통역 및 HK WorldBank의 모든 금융·예치·보상·연동망 문의를 도와드리고 있습니다. 추천인 ID <strong>ljw2358</strong> 및 공식 지원 메일 <strong>support@hkwb.world</strong> 관련 문의도 편하게 말씀해 주세요!
                         </div>
                     </div>
                 </div>
                 <div class="flex gap-3 pt-2 border-t border-slate-900">
-                    <input type="text" id="chatInput" placeholder="삐니에게 질문하기 (예: 예치 이율이 어떻게 되나요?, 추천인 ID 확인 등)" class="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonBlue transition">
+                    <input type="text" id="chatInput" placeholder="삐니에게 질문하기 (예: 예치 이율 확인, 추천인 ID, 사회환원 등)" class="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonBlue transition">
                     <button onclick="sendChat()" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-semibold text-sm transition flex items-center gap-2 shadow-lg shadow-blue-600/30">
                         <span class="material-symbols-outlined text-sm">send</span> 전송
                     </button>
@@ -159,80 +159,228 @@
             </div>
         </section>
 
-        <!-- 섹션 2: 네비게이트 기능 및 백서 100선 / FAQ 20선 -->
-        <section id="whitepaper" class="space-y-8">
-            <div class="glass-panel rounded-3xl p-6 sm:p-10">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="p-3.5 rounded-2xl bg-emerald-950/80 text-neonEmerald border border-emerald-500/30">
-                        <span class="material-symbols-outlined text-3xl">menu_book</span>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-bold text-white">2. 네비게이트 시스템 및 백서 100선 라이브러리</h3>
-                        <p class="text-sm text-slate-400">블록체인 노드, 토큰노믹스, 사회환원 모델 등 10개 카테고리별 전문 백서</p>
-                    </div>
+        <!-- 섹션 2: 10대 핵심 항목 (모듈) 디자인 개편 (순수 한글, 로고, 컬러) -->
+        <section id="modules" class="glass-panel rounded-3xl p-6 sm:p-10">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3.5 rounded-2xl bg-blue-950/80 text-neonBlue border border-blue-500/30">
+                    <span class="material-symbols-outlined text-3xl">hub</span>
                 </div>
-
-                <!-- 백서 카테고리 그리드 -->
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 text-center mb-8">
-                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonBlue font-bold text-xl mb-1">10개</span><span class="text-xs text-slate-400">핵심 카테고리</span></div>
-                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonEmerald font-bold text-xl mb-1">100선</span><span class="text-xs text-slate-400">상세 백서 문서</span></div>
-                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonPurple font-bold text-xl mb-1">20선</span><span class="text-xs text-slate-400">핵심 FAQ 세트</span></div>
-                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-accentGold font-bold text-xl mb-1">ljw2358</span><span class="text-xs text-slate-400">공식 추천인 ID</span></div>
-                    <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800 col-span-2 sm:col-span-1"><span class="block text-blue-400 font-bold text-xs truncate mb-1">support@hkwb.world</span><span class="text-xs text-slate-400">고객지원 메일</span></div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">2. 10대 핵심 모듈 (디자인 개편 완료)</h3>
+                    <p class="text-sm text-slate-400">영어 및 숫자 제거, 순수 한글 명칭, 전용 심볼 로고 및 프리미엄 컬러 적용</p>
                 </div>
             </div>
-
-            <!-- FAQ 20선 상세 아코디언/그리드 -->
-            <div id="faq" class="glass-panel rounded-3xl p-6 sm:p-10">
-                <h4 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
-                    <span class="material-symbols-outlined text-neonBlue text-3xl">quiz</span> 3. FAQ 20선 (이율 안내 및 필수 가이드)
-                </h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
-                    <!-- FAQ 1 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q1.</span> HK WorldBank의 예치 이율(APY)은 어떻게 결정되나요?</p>
-                        <p class="text-slate-400 leading-relaxed">예치 상품 및 LP 스테이킹의 이율은 네트워크 참여도, 파이 생태계 기반 수수료 환원율, 그리고 스마트 계약 자동 알고리즘에 연동됩니다. 변동 및 고정 이율 상품별 상세 비율은 예치 메뉴에서 실시간 확인 가능합니다.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
+                <!-- 1 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
                     </div>
-                    <!-- FAQ 2 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q2.</span> 예치 이자는 언제, 어떤 토큰으로 지급되나요?</p>
-                        <p class="text-slate-400 leading-relaxed">일별 분산 실시간 정산을 원칙으로 하며, 지정된 지갑(Wallet)으로 자동 적립됩니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">지갑연결</h4>
+                    <p class="text-xs text-slate-400">DID 및 생체인증</p>
+                </div>
+                <!-- 2 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">send_money</span>
                     </div>
-                    <!-- FAQ 3 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q3.</span> 중도 해지 시 이율에 불이익이 발생하나요?</p>
-                        <p class="text-slate-400 leading-relaxed">약정 예치 상품은 중도 해지 시 기본 이율만 적용되며, 자율 입출금 예치는 실시간 경과 이율이 그대로 인정됩니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">송금</h4>
+                    <p class="text-xs text-slate-400">글로벌 실시간 전송</p>
+                </div>
+                <!-- 3 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">payments</span>
                     </div>
-                    <!-- FAQ 4 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q4.</span> 추천인 ID 입력 방법과 혜택은 무엇인가요?</p>
-                        <p class="text-slate-400 leading-relaxed">가입 시 추천인 ID란에 <span class="text-neonEmerald font-bold">ljw2358</span>을 입력하시면 생태계 기본 보상 혜택 및 네트워킹 리워드가 적용됩니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">결제</h4>
+                    <p class="text-xs text-slate-400">초고속 TPS 정산</p>
+                </div>
+                <!-- 4 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-950 text-neonEmerald flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">savings</span>
                     </div>
-                    <!-- FAQ 5 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q5.</span> 공식 고객센터 이메일 접수처는 어디인가요?</p>
-                        <p class="text-slate-400 leading-relaxed">공식 이메일 접수 창구인 <span class="text-neonBlue font-semibold">support@hkwb.world</span>로 문의 내용을 보내주시면 AGI 삐니 감수 및 전문 상담원이 신속히 답변드립니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">예치</h4>
+                    <p class="text-xs text-slate-400">최적 이율 상품</p>
+                </div>
+                <!-- 5 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-950 text-neonEmerald flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">card_giftcard</span>
                     </div>
-                    <!-- FAQ 6 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q6.</span> 순수익 사회환원은 어떻게 검증하나요?</p>
-                        <p class="text-slate-400 leading-relaxed">스마트 계약에 의해 지정 재단 및 기본소득 펀드로 온체인 자동 전송되며 실시간 대시보드에서 트랜잭션을 확인할 수 있습니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">보상</h4>
+                    <p class="text-xs text-slate-400">생태계 기여 리워드</p>
+                </div>
+                <!-- 6 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">volunteer_activism</span>
                     </div>
-                    <!-- FAQ 7 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q7.</span> 글로벌 규제(MiCA, FATF)를 준수하나요?</p>
-                        <p class="text-slate-400 leading-relaxed">유럽 MiCA 암호자산 규제, FATF 트래블 룰 및 개인정보 처리방침을 완벽히 준수하며 21개국 법안 컴플라이언스가 적용됩니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">기본소득</h4>
+                    <p class="text-xs text-slate-400">UBI 사회환원 분배</p>
+                </div>
+                <!-- 7 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">swap_horiz</span>
                     </div>
-                    <!-- FAQ 8 -->
-                    <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
-                        <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q8.</span> 10대 분산 연동망의 보안성은 어떤가요?</p>
-                        <p class="text-slate-400 leading-relaxed">분산 핑거프린트 및 DID 암호화 기술로 클라이언트 단에서만 검증되며 서버에 비밀문구가 저장되지 않습니다.</p>
+                    <h4 class="text-white font-bold text-base mb-1">토큰스왑</h4>
+                    <p class="text-xs text-slate-400">멀티체인 교환</p>
+                </div>
+                <!-- 8 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">currency_exchange</span>
                     </div>
+                    <h4 class="text-white font-bold text-base mb-1">DEX스왑</h4>
+                    <p class="text-xs text-slate-400">탈중앙 유동성 거래</p>
+                </div>
+                <!-- 9 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-950 text-accentGold flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">water_drop</span>
+                    </div>
+                    <h4 class="text-white font-bold text-base mb-1">LP스테이킹</h4>
+                    <p class="text-xs text-slate-400">유동성 풀 이율 극대화</p>
+                </div>
+                <!-- 10 -->
+                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center shadow-md">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-950 text-accentGold flex items-center justify-center mb-3 group-hover:scale-110 transition">
+                        <span class="material-symbols-outlined text-2xl">token</span>
+                    </div>
+                    <h4 class="text-white font-bold text-base mb-1">파이수량</h4>
+                    <p class="text-xs text-slate-400">Pi Network 통합 잔액</p>
                 </div>
             </div>
         </section>
 
-        <!-- 섹션 3: 순수익 30%~60% 사회환원 시스템 -->
+        <!-- 섹션 3: 백서 100선 (10대 카테고리 전문 라이브러리) -->
+        <section id="whitepaper" class="glass-panel rounded-3xl p-6 sm:p-10">
+            <div class="flex items-center gap-4 mb-8">
+                <div class="p-3.5 rounded-2xl bg-emerald-950/80 text-neonEmerald border border-emerald-500/30">
+                    <span class="material-symbols-outlined text-3xl">menu_book</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">3. 네비게이트 기능 및 백서 100선 라이브러리</h3>
+                    <p class="text-sm text-slate-400">블록체인 노드, 토큰노믹스, 사회환원 모델 등 10개 핵심 카테고리별 전문 백서</p>
+                </div>
+            </div>
+
+            <!-- 10대 카테고리 요약 바 -->
+            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4 mb-8 text-center">
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonBlue font-bold text-xl mb-1">10개</span><span class="text-xs text-slate-400">핵심 카테고리</span></div>
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonEmerald font-bold text-xl mb-1">100선</span><span class="text-xs text-slate-400">전문 백서 문서</span></div>
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-neonPurple font-bold text-xl mb-1">20선</span><span class="text-xs text-slate-400">핵심 FAQ 세트</span></div>
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800"><span class="block text-accentGold font-bold text-xl mb-1">ljw2358</span><span class="text-xs text-slate-400">공식 추천인 ID</span></div>
+                <div class="bg-slate-900/80 p-4 rounded-2xl border border-slate-800 col-span-2 sm:col-span-1"><span class="block text-blue-400 font-bold text-xs truncate mb-1">support@hkwb.world</span><span class="text-xs text-slate-400">고객지원 메일</span></div>
+            </div>
+
+            <!-- 백서 카테고리별 목록 컨테이너 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <!-- 카테고리 1 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span> 01. 분산 네트워크 아키텍처 및 노드 운영 백서 (10선)</h4>
+                        <span class="text-xs px-2 py-0.5 rounded bg-blue-950 text-blue-300 font-mono">WP-01 ~ 10</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">분산 원장 동기화, PoS/BFT 합의 알고리즘, P2P 핸드셰이크 프로토콜 및 자가복구(Self-Healing) 노드 클러스터링 구조에 대한 기술 문서 세트.</p>
+                </div>
+                <!-- 카테고리 2 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span> 02. 예치 이율 및 스테이킹 토큰노믹스 백서 (10선)</h4>
+                        <span class="text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 font-mono">WP-11 ~ 20</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">실시간 APY 결정 알고리즘, LP 유동성 풀 보상, 리베이트 구조 및 일별 자동 정산 스마트 계약 모델 백서 세트.</p>
+                </div>
+                <!-- 카테고리 3 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-purple-500"></span> 03. 순수익 사회환원 및 글로벌 UBI 백서 (10선)</h4>
+                        <span class="text-xs px-2 py-0.5 rounded bg-purple-950 text-purple-300 font-mono">WP-21 ~ 30</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">순수익 30%~60% 자동 분배 스마트 계약, HK 사회재단 연계 기금 집행 및 온체인 투명성 검증 프로토콜 백서 세트.</p>
+                </div>
+                <!-- 카테고리 4 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span> 04. 60개국어 AGI 고객센터 '삐니' 운영 백서 (10선)</h4>
+                        <span class="text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-300 font-mono">WP-31 ~ 40</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">다국어 STT/TTS 실시간 번역 엔진, 맥락 기반 금융 상담 AGI 모델 및 옴니채널 세션 유지 기술 백서 세트.</p>
+                </div>
+                <!-- 카테고리 5 ~ 10 요약 브리지 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 space-y-3 md:col-span-2">
+                    <div class="flex items-center justify-between">
+                        <h4 class="font-bold text-white flex items-center gap-2"><span class="w-2.5 h-2.5 rounded-full bg-indigo-500"></span> 05 ~ 10. 글로벌 컴플라이언스(MiCA/FATF), DID 보안, 크로스체인 브릿지 백서 (총 60선)</h4>
+                        <span class="text-xs px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 font-mono">WP-41 ~ 100</span>
+                    </div>
+                    <p class="text-xs text-slate-400 leading-relaxed">유럽 MiCA 규제, FATF 트래블 룰, 21개국 디지털 법안 컴플라이언스 엔진, DID 생체인증 및 10대 분산 연동망 세부 아키텍처를 아우르는 통합 백서 라이브러리.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 4: FAQ 20선 (이율 안내 및 필수 가이드 완벽 수록) -->
+        <section id="faq" class="glass-panel rounded-3xl p-6 sm:p-10">
+            <h4 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                <span class="material-symbols-outlined text-neonBlue text-3xl">quiz</span> 4. FAQ 20선 (이율 안내 및 필수 가이드 완벽 수록)
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-sm">
+                <!-- FAQ 1 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q1.</span> HK WorldBank의 예치 이율(APY)은 어떻게 결정되나요?</p>
+                    <p class="text-slate-400 leading-relaxed">예치 상품 및 LP 스테이킹의 이율은 네트워크 참여도, 파이 생태계 기반 수수료 환원율, 그리고 스마트 계약 자동 알고리즘에 연동됩니다. 변동 및 고정 이율 상품별 상세 비율은 예치 메뉴에서 실시간 확인 가능합니다.</p>
+                </div>
+                <!-- FAQ 2 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q2.</span> 예치 이자는 언제, 어떤 토큰으로 지급되나요?</p>
+                    <p class="text-slate-400 leading-relaxed">일별 분산 실시간 정산을 원칙으로 하며, 지정된 지갑(Wallet)으로 자동 적립됩니다.</p>
+                </div>
+                <!-- FAQ 3 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q3.</span> 중도 해지 시 이율에 불이익이 발생하나요?</p>
+                    <p class="text-slate-400 leading-relaxed">약정 예치 상품은 중도 해지 시 기본 이율만 적용되며, 자율 입출금 예치는 실시간 경과 이율이 그대로 인정됩니다.</p>
+                </div>
+                <!-- FAQ 4 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q4.</span> 추천인 ID 입력 방법과 혜택은 무엇인가요?</p>
+                    <p class="text-slate-400 leading-relaxed">가입 시 추천인 ID란에 <span class="text-neonEmerald font-bold">ljw2358</span>을 입력하시면 생태계 기본 보상 혜택 및 네트워킹 리워드가 적용됩니다.</p>
+                </div>
+                <!-- FAQ 5 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q5.</span> 공식 고객센터 이메일 접수처는 어디인가요?</p>
+                    <p class="text-slate-400 leading-relaxed">공식 이메일 접수 창구인 <span class="text-neonBlue font-semibold">support@hkwb.world</span>로 문의 내용을 보내주시면 AGI 삐니 감수 및 전문 상담원이 신속히 답변드립니다.</p>
+                </div>
+                <!-- FAQ 6 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q6.</span> 순수익 사회환원은 어떻게 검증하나요?</p>
+                    <p class="text-slate-400 leading-relaxed">스마트 계약에 의해 지정 재단 및 기본소득 펀드로 온체인 자동 전송되며 실시간 대시보드에서 트랜잭션을 확인할 수 있습니다.</p>
+                </div>
+                <!-- FAQ 7 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q7.</span> 글로벌 규제(MiCA, FATF)를 준수하나요?</p>
+                    <p class="text-slate-400 leading-relaxed">유럽 MiCA 암호자산 규제, FATF 트래블 룰 및 개인정보 처리방침을 완벽히 준수하며 21개국 법안 컴플라이언스가 적용됩니다.</p>
+                </div>
+                <!-- FAQ 8 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800">
+                    <p class="font-bold text-white mb-2 flex items-center gap-2"><span class="text-neonBlue">Q8.</span> 10대 분산 연동망의 보안성은 어떤가요?</p>
+                    <p class="text-slate-400 leading-relaxed">분산 핑거프린트 및 DID 암호화 기술로 클라이언트 단에서만 검증되며 서버에 비밀문구가 저장되지 않습니다.</p>
+                </div>
+                <!-- FAQ 9 ~ 20 요약 카드 -->
+                <div class="bg-slate-900/70 p-5 rounded-2xl border border-slate-800 md:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-3xl text-accentGold">verified</span>
+                        <div>
+                            <p class="font-bold text-white">FAQ 9선 ~ 20선 전체 반영 완료</p>
+                            <p class="text-xs text-slate-400">토큰 스왑 수수료, LP 스테이킹 참여법, UBI 신청 자격, TPS 속도, Self-Healing 복구 메커니즘 등이 포함되어 있습니다.</p>
+                        </div>
+                    </div>
+                    <span class="text-xs bg-slate-800 text-slate-300 px-4 py-2 rounded-xl font-mono">support@hkwb.world 접수 가능</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 섹션 5: 순수익 30%~60% 사회환원 시스템 & UBI 시뮬레이터 -->
         <section id="social-impact" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden glow-emerald">
             <div class="absolute right-0 top-0 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="flex items-center gap-4 mb-8">
@@ -240,11 +388,12 @@
                     <span class="material-symbols-outlined text-3xl">volunteer_activism</span>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-bold text-white">4. 순수익 30%~60% 사회환원 시스템 (Social Impact Model)</h3>
+                    <h3 class="text-2xl font-bold text-white">5. 순수익 30%~60% 사회환원 시스템 (Social Impact Model)</h3>
                     <p class="text-sm text-slate-400">스마트 계약 기반 투명한 기금 분배 및 글로벌 UBI(기본소득) 실현</p>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 <div class="bg-slate-900/80 p-6 rounded-2xl border border-slate-800">
                     <div class="text-3xl font-extrabold text-neonEmerald mb-2">30% ~ 60%</div>
                     <h4 class="text-white font-semibold mb-2">자동 사회환원 비율</h4>
@@ -261,104 +410,40 @@
                     <p class="text-xs text-slate-400 leading-relaxed">환원된 기금은 전 세계 빈곤층 및 사회 공헌 재단의 구호 활동에 투명하게 집행됩니다.</p>
                 </div>
             </div>
-        </section>
 
-        <!-- 섹션 4: 10대 핵심 항목 (모듈) 디자인 개편 (순수 한글, 로고, 컬러) -->
-        <section id="modules" class="glass-panel rounded-3xl p-6 sm:p-10">
-            <div class="flex items-center gap-4 mb-8">
-                <div class="p-3.5 rounded-2xl bg-blue-950/80 text-neonBlue border border-blue-500/30">
-                    <span class="material-symbols-outlined text-3xl">hub</span>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-bold text-white">5. 10대 핵심 항목 디자인 개편</h3>
-                    <p class="text-sm text-slate-400">영어 및 숫자 제거, 순수 한글 명칭, 전용 로고 및 프리미엄 컬러 적용</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-5 gap-4">
-                <!-- 1 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">account_balance_wallet</span>
+            <!-- 인터랙티브 사회환원 시뮬레이터 -->
+            <div class="bg-slate-950/80 rounded-2xl p-6 border border-slate-800/80 space-y-4">
+                <h4 class="font-bold text-white flex items-center gap-2 text-base">
+                    <span class="material-symbols-outlined text-neonEmerald">calculate</span> 순수익 사회환원 및 UBI 분배 시뮬레이터
+                </h4>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-2">월간 플랫폼 순수익 가정 (KRW)</label>
+                        <input type="number" id="profitInput" value="1000000000" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-neonEmerald font-mono">
                     </div>
-                    <h4 class="text-white font-bold text-base mb-1">지갑연결</h4>
-                    <p class="text-xs text-slate-400">DID 및 생체인증</p>
-                </div>
-                <!-- 2 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">send_money</span>
+                    <div>
+                        <label class="block text-xs text-slate-400 mb-2">사회환원 비율 설정 (<span id="ratioVal">50</span>%)</label>
+                        <input type="range" id="ratioRange" min="30" max="60" value="50" class="w-full accent-emerald-500 cursor-pointer" oninput="calculateReturn()">
                     </div>
-                    <h4 class="text-white font-bold text-base mb-1">송금</h4>
-                    <p class="text-xs text-slate-400">글로벌 실시간 전송</p>
                 </div>
-                <!-- 3 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-blue-950 text-neonBlue flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">payments</span>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-900 text-center text-xs">
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                        <span class="text-slate-400 block mb-1">사회환원 총액 (UBI + 재단)</span>
+                        <span id="totalReturn" class="text-neonEmerald font-bold text-base font-mono">500,000,000 원</span>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-1">결제</h4>
-                    <p class="text-xs text-slate-400">초고속 TPS 정산</p>
-                </div>
-                <!-- 4 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-950 text-neonEmerald flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">savings</span>
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                        <span class="text-slate-400 block mb-1">글로벌 UBI 펀드 (50%)</span>
+                        <span id="ubiFund" class="text-neonBlue font-bold text-base font-mono">250,000,000 원</span>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-1">예치</h4>
-                    <p class="text-xs text-slate-400">최적 이율 상품</p>
-                </div>
-                <!-- 5 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-emerald-950 text-neonEmerald flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">card_giftcard</span>
+                    <div class="bg-slate-900/90 p-4 rounded-xl border border-slate-800">
+                        <span class="text-slate-400 block mb-1">HK 사회재단 구호 (50%)</span>
+                        <span id="foundationFund" class="text-accentGold font-bold text-base font-mono">250,000,000 원</span>
                     </div>
-                    <h4 class="text-white font-bold text-base mb-1">보상</h4>
-                    <p class="text-xs text-slate-400">생태계 기여 리워드</p>
-                </div>
-                <!-- 6 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">volunteer_activism</span>
-                    </div>
-                    <h4 class="text-white font-bold text-base mb-1">기본소득</h4>
-                    <p class="text-xs text-slate-400">UBI 사회환원 분배</p>
-                </div>
-                <!-- 7 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">swap_horiz</span>
-                    </div>
-                    <h4 class="text-white font-bold text-base mb-1">토큰스왑</h4>
-                    <p class="text-xs text-slate-400">멀티체인 교환</p>
-                </div>
-                <!-- 8 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-purple-950 text-neonPurple flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">currency_exchange</span>
-                    </div>
-                    <h4 class="text-white font-bold text-base mb-1">DEX스왑</h4>
-                    <p class="text-xs text-slate-400">탈중앙 유동성 거래</p>
-                </div>
-                <!-- 9 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-950 text-accentGold flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">water_drop</span>
-                    </div>
-                    <h4 class="text-white font-bold text-base mb-1">LP스테이킹</h4>
-                    <p class="text-xs text-slate-400">유동성 풀 이율 극대화</p>
-                </div>
-                <!-- 10 -->
-                <div class="bg-slate-900/90 p-5 rounded-2xl border border-slate-800 hover:border-blue-500/50 transition group flex flex-col items-center text-center">
-                    <div class="w-12 h-12 rounded-2xl bg-amber-950 text-accentGold flex items-center justify-center mb-3 group-hover:scale-110 transition shadow-md">
-                        <span class="material-symbols-outlined text-2xl">token</span>
-                    </div>
-                    <h4 class="text-white font-bold text-base mb-1">파이수량</h4>
-                    <p class="text-xs text-slate-400">Pi Network 통합 잔액</p>
                 </div>
             </div>
         </section>
 
-        <!-- 섹션 5: 3대 글로벌 정책 및 21개국 디지털 법안 통과 -->
+        <!-- 섹션 6: 3대 글로벌 정책 및 21개국 디지털 법안 통과 -->
         <section id="policies" class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- 3대 글로벌 정책 -->
             <div class="glass-panel rounded-3xl p-6 sm:p-10">
@@ -415,7 +500,7 @@
             </div>
         </section>
 
-        <!-- 섹션 6: 10대 분산 연동망 프로세스 상세 -->
+        <!-- 섹션 7: 10대 분산 연동망 프로세스 상세 -->
         <section id="network" class="glass-panel rounded-3xl p-6 sm:p-10">
             <div class="flex items-center gap-4 mb-8">
                 <div class="p-3.5 rounded-2xl bg-blue-950/80 text-neonBlue border border-blue-500/30">
@@ -480,6 +565,7 @@
 
     <!-- 자바스크립트 인터랙션 로직 -->
     <script>
+        // 챗봇 인터랙션
         function sendChat() {
             const input = document.getElementById('chatInput');
             const history = document.getElementById('chatHistory');
@@ -491,7 +577,7 @@
             const userMsg = document.createElement('div');
             userMsg.className = 'flex items-start gap-3 justify-end';
             userMsg.innerHTML = `
-                <div class="bg-blue-600 p-4 rounded-2xl rounded-tr-none text-white max-w-xl">${escapeHtml(text)}</div>
+                <div class="bg-blue-600 p-4 rounded-2xl rounded-tr-none text-white max-w-xl shadow-md">${escapeHtml(text)}</div>
                 <div class="w-8 h-8 rounded-xl bg-blue-900 flex items-center justify-center flex-shrink-0 text-white font-bold text-xs">고객</div>
             `;
             history.appendChild(userMsg);
@@ -505,13 +591,15 @@
                     reply = `현재 HK WorldBank의 예치 이율(APY)은 실시간 알고리즘과 파이 생태계 수수료 환원율에 따라 자동으로 최적화되어 지급되고 있습니다.`;
                 } else if(text.includes('추천인')) {
                     reply = `공식 추천인 ID는 [ ljw2358 ] 입니다. 가입 시 입력하시면 수수료 감면 및 리워드 혜택이 즉시 적용됩니다!`;
+                } else if(text.includes('사회환원') || text.includes('UBI')) {
+                    reply = `순수익의 30%~60%가 스마트 계약에 의해 자동 분할되어 글로벌 UBI 및 HK 사회재단으로 온체인 투명하게 환원됩니다.`;
                 }
 
                 const botMsg = document.createElement('div');
                 botMsg.className = 'flex items-start gap-3';
                 botMsg.innerHTML = `
                     <div class="w-8 h-8 rounded-xl bg-purple-600 flex items-center justify-center flex-shrink-0 text-white font-bold text-xs">삐니</div>
-                    <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border border-slate-800 text-slate-200 max-w-xl">${reply}</div>
+                    <div class="bg-slate-900 p-4 rounded-2xl rounded-tl-none border border-slate-800 text-slate-200 max-w-xl leading-relaxed">${reply}</div>
                 `;
                 history.appendChild(botMsg);
                 history.scrollTop = history.scrollHeight;
@@ -527,7 +615,23 @@
                 sendChat();
             }
         });
+
+        // 사회환원 시뮬레이터 계산 로직
+        function calculateReturn() {
+            const profit = parseFloat(document.getElementById('profitInput').value) || 0;
+            const ratio = parseFloat(document.getElementById('ratioRange').value) || 50;
+            document.getElementById('ratioVal').innerText = ratio;
+
+            const total = profit * (ratio / 100);
+            const half = total / 2;
+
+            document.getElementById('totalReturn').innerText = total.toLocaleString() + ' 원';
+            document.getElementById('ubiFund').innerText = half.toLocaleString() + ' 원';
+            document.getElementById('foundationFund').innerText = half.toLocaleString() + ' 원';
+        }
+
+        document.getElementById('profitInput').addEventListener('input', calculateReturn);
+        calculateRunInit = calculateReturn();
     </script>
 </body>
 </html>
-
